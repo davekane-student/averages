@@ -1,5 +1,5 @@
 ---
-title: "A Direct and Asymptotic Analysis of Coin Game Tie Probabilities"
+title: "A Coin Game"
 author: "David Kane and Dev Raj"
 date: "July 2026"
 format:
@@ -8,13 +8,16 @@ format:
     toc-depth: 3
     number-sections: true
     theme: journal
+  typst:
+    toc: true
+    number-sections: true
 ---
 
 # Proposed Problem
 
 **Problem.** Proposed by Dave Kane (Student).
 
-Two players each flip their own coin $F$ times. What is the probability $P_{\text{tie}}(F)$ that both players end up with the exact same number of heads?
+Two players each flip their own coin $F$ times. Player 1 got heads on each flip with success probability $p_1$, and Player 2 with success probability $p_2$. What is the probability $P_{\text{tie}}(F)$ that both players end up with the exact same number of heads? Completely characterize both the exact closed-form representations and the asymptotic decay behavior of $P_{\text{tie}}(F)$ as $F \to \infty$ for all configurations of $p_1$ and $p_2$.
 
 ---
 
@@ -100,20 +103,23 @@ This formalizes the "collision probability" heuristic: the $\sqrt{\pi}$ prefacto
 
 When the players use matching biased coins ($p \neq 1/2$), the term $p^2 \neq (1-p)^2$, which prevents factoring out the probability term from the sum and breaks the simple Vandermonde collapse.
 
-However, because the two probability distributions are centered at the identical mean $F p$, their overlap remains maximized. By the Local Limit Theorem, the tie probability still decays polynomially as $\Theta(F^{-1/2})$, with the variance determined by the biased coin's parameter: $\sigma^2 = p(1-p)$.
-
-We can express the exact sum analytically in terms of classical **Legendre Polynomials** $P_F(x)$ by mapping it to Gauss's hypergeometric function $_2F_1(-F, -F; 1; z)$ where $z = \frac{p^2}{(1-p)^2}$, and applying a classical transformation identity:
-
-**Theorem 1.** *For two players flipping matching biased coins ($p_1 = p_2 = p$), the exact tie probability is:*
+However, because the two probability distributions are centered at the identical mean $F p$, their overlap remains maximized. The exact tie probability is represented by the direct sum:
 $$
-P_{\text{tie}}(F) = (2p - 1)^F P_F\left( \frac{1 - 2p + 2p^2}{2p - 1} \right).
+P_{\text{tie}}(F) = \sum_{k=0}^{F} \binom{F}{k}^2 p^{2k} (1-p)^{2(F-k)}.
+$$
+Since this sum does not admit a simpler elementary algebraic closed-form representation, we analyze its asymptotic behavior as $F \to \infty$. By applying the de Moivre-Laplace Local Limit Theorem with variance $\sigma^2 = p(1-p)$, the tie probability still decays polynomially as $\Theta(F^{-1/2})$, scaled by the variance of the biased coin:
+$$
+P_{\text{tie}}(F) \sim \frac{1}{2\sqrt{\pi F p(1-p)}}.
 $$
 
 ---
 
 ## Case 3: General Asymmetric Coins ($p_1 \neq p_2$)
 
-When $p_1 \neq p_2$, the two binomial distributions are centered at different expectations $F p_1$ and $F p_2$. This shifts the overlap of the distributions into their tail regions, driving the tie probability to decay **exponentially**.
+When $p_1 \neq p_2$, the two binomial distributions are centered at different expectations $F p_1$ and $F p_2$. This shifts the overlap of the distributions into their tail regions, driving the tie probability to decay **exponentially**. The exact tie probability is given by the general sum:
+$$
+P_{\text{tie}}(F) = \sum_{k=0}^{F} \binom{F}{k}^2 (p_1 p_2)^k \left[ (1-p_1)(1-p_2) \right]^{F-k}.
+$$
 
 ### Exact Analytical Asymptotic Formula via Laplace's Method
 We can derive the exact analytical asymptotic formula, including both the exponential rate and the polynomial prefactor, using Laplace's method for sums.
@@ -131,7 +137,8 @@ $$
 $$
 P_{\text{tie}}(F) = \sum_{k=0}^{F} \left[ \binom{F}{k} A^k B^{F-k} \right]^2.
 $$
-Let $f(k) = \binom{F}{k} A^k B^{F-k}$. We wish to find the asymptotic sum $\sum f(k)^2$.
+Let $f(k) = \binom{F}{k} A^k B^{F-k}$. We wish to find the asymptotic sum $\sum f(k)^2$. Since $A+B = \sqrt{p_1 p_2} + \sqrt{(1-p_1)(1-p_2)} < 1$ for all $p_1 \neq p_2$, the sequence $f(k)$ is not a probability distribution. However, we can express it as a scaled version of a true binomial probability distribution. Specifically, we can write $f(k) = (A+B)^F g(k)$, where $g(k) = \binom{F}{k} (p^*)^k (q^*)^{F-k}$ is a probability distribution with success parameter $p^* = A/(A+B)$ and failure parameter $q^* = B/(A+B)$. This allows us to rigorously apply standard asymptotic results and Stirling's approximation to the peak term of this binomial distribution.
+
 The peak of $f(k)$ occurs at its expectation:
 $$
 k^* = F \cdot p^*, \qquad \text{where } p^* = \frac{A}{A+B}, \ \ q^* = 1 - p^* = \frac{B}{A+B}.
@@ -171,69 +178,23 @@ $$
 
 Since $A+B = \sqrt{p_1 p_2} + \sqrt{(1-p_1)(1-p_2)} < 1$ for all $p_1 \neq p_2$, this proves the exponential decay rate rigorously, while providing the exact polynomial prefactor $\Theta(F^{-1/2})$.
 
-### Connection to Legendre Polynomials
+### Unifying Check on All Three Cases
+A beautiful feature of the general asymptotic formula is that it seamlessly unifies all three cases when the parameters are equal ($p_1 = p_2 = p$):
 
-Using the classical transformation identity between Gauss's hypergeometric function $_2F_1$ and Legendre Polynomials, we obtain the general exact closed form for any choice of $p_1$ and $p_2$:
+1. **Unfair but Matched Coins ($p_1 = p_2 = p$)**:
+   Setting $p_1 = p_2 = p$ yields $A = p$ and $B = 1-p$, which gives $A+B = 1$. The exponential decay factor $(A+B)^{2F} = 1^{2F} = 1$ collapses, and the prefactor becomes:
+   $$
+   P_{\text{tie}}(F) \sim \frac{1}{2\sqrt{\pi F p(1-p)}},
+   $$
+   recovering the Case 2 polynomial asymptotic decay rate.
+2. **Fair Coins ($p = 1/2$)**:
+   Further setting $p = 1/2$ yields $p(1-p) = 1/4 \implies \sqrt{p(1-p)} = 1/2$. The formula reduces to:
+   $$
+   P_{\text{tie}}(F) \sim \frac{1}{\sqrt{\pi F}},
+   $$
+   recovering the Case 1 fair-coin baseline.
 
-**Theorem 3.** *For any success probabilities $p_1$ and $p_2$, the exact tie probability is:*
-$$
-P_{\text{tie}}(F) = (p_1 + p_2 - 1)^F P_F\left( \frac{1 - p_1 - p_2 + 2 p_1 p_2}{p_1 + p_2 - 1} \right).
-$$
-
-### Proof of Removability at Complementarity ($p_1 + p_2 = 1$)
-
-Let $u = p_1 + p_2 - 1$. The complementary condition is $u = 0$. For $u \neq 0$, the Legendre representation is:
-
-$$
-P_{\text{tie}}(F) = u^F P_F\left( \frac{1 - p_1 - p_2 + 2p_1p_2}{u} \right) = u^F P_F\left( \frac{2p_1p_2 - u}{u} \right).
-$$
-We can prove that the singularity at $u = 0$ is removable and find its limit using two complementary methods: a direct algebraic expansion and an asymptotic limit analysis based on the leading-order behavior of Legendre Polynomials.
-
-#### Method 1: Asymptotic Limit via Leading Legendre Terms
-
-We recall that as the argument $x \to \pm\infty$, the Legendre Polynomial $P_F(x)$ of degree $F$ is dominated by its leading-order term:
-
-$$
-P_F(x) \sim \frac{1}{2^F} \binom{2F}{F} x^F.
-$$
-Under the complementarity condition, as the perturbation $u = p_1+p_2-1 \to 0$, the argument $x = \frac{2p_1p_2 - u}{u}$ grows without bound ($x \to \pm\infty$). Substituting this asymptotic behavior:
-$$
-P_F\left( \frac{2p_1p_2 - u}{u} \right) \sim \frac{1}{2^F} \binom{2F}{F} \left( \frac{2p_1p_2 - u}{u} \right)^F \sim \frac{1}{2^F} \binom{2F}{F} \frac{2^F (p_1 p_2)^F}{u^F} = \binom{2F}{F} \frac{(p_1 p_2)^F}{u^F}.
-$$
-Taking the limit as $u \to 0$ of the full expression:
-$$
-\lim_{u \to 0} u^F P_F\left( \frac{2p_1p_2 - u}{u} \right) = \lim_{u \to 0} u^F \left[ \binom{2F}{F} \frac{(p_1 p_2)^F}{u^F} \right] = \binom{2F}{F} (p_1 p_2)^F.
-$$
-Since $p_1 + p_2 = 1 \implies p_2 = 1 - p_1$, this limits to $[p_1(1-p_1)]^F \binom{2F}{F}$, recovering the Vandermonde-collapsed baseline exactly.
-
-#### Method 2: Exact Algebraic Cancellation
-
-To verify that this holds exactly for all $u \neq 0$ (and not just in the limit), we expand the Legendre Polynomial $P_F(x)$ explicitly:
-$$
-P_F(x) = \frac{1}{2^F} \sum_{j=0}^{F} \binom{F}{j}^2 (x-1)^{F-j} (x+1)^j.
-$$
-Substituting $x = \frac{2p_1p_2 - u}{u}$ into the terms:
-$$
-x - 1 = \frac{2p_1p_2 - 2u}{u} = \frac{2(p_1p_2 - (p_1+p_2-1))}{u} = \frac{2(1-p_1)(1-p_2)}{u},
-$$
-$$
-x + 1 = \frac{2p_1p_2}{u}.
-$$
-Substituting these back into the sum:
-$$
-P_F\left( \frac{2p_1p_2 - u}{u} \right) = \frac{1}{2^F} \sum_{j=0}^{F} \binom{F}{j}^2 \left( \frac{2(1-p_1)(1-p_2)}{u} \right)^{F-j} \left( \frac{2p_1p_2}{u} \right)^j
-$$
-$$
-= \frac{1}{2^F} \sum_{j=0}^{F} \binom{F}{j}^2 2^F \left( (1-p_1)(1-p_2) \right)^{F-j} (p_1p_2)^j u^{-F}
-$$
-$$
-= u^{-F} \sum_{j=0}^{F} \binom{F}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{F-j}.
-$$
-Multiplying by $u^F$, the $u^{-F}$ cancels out completely, showing that for all $u \neq 0$:
-$$
-u^F P_F\left( \frac{2p_1p_2 - u}{u} \right) = \sum_{j=0}^{F} \binom{F}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{F-j} = P_{\text{tie}}(F).
-$$
-This proves that the singularity at $p_1 + p_2 = 1$ is indeed **removable**, and the limit as $u \to 0$ converges exactly to the Vandermonde-collapsed baseline $[p_1(1-p_1)]^F \binom{2F}{F}$. This holds for all complementary probability pairs, including the fair-coin case ($p_1=p_2=1/2$). $\blacksquare$
+This provides a complete, elegant, and unified characterization of the coin game tie probabilities under all configurations.
 
 
 

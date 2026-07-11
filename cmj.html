@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dave Kane (Student)">
+<meta name="author" content="David Kane and Dev Raj">
 <meta name="dcterms.date" content="2026-07-01">
 
-<title>A Direct and Asymptotic Analysis of Coin Game Tie Probabilities</title>
+<title>A Coin Game</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -92,20 +92,18 @@ window.Quarto = {
   <li><a href="#case-3-general-asymmetric-coins-p_1-neq-p_2" id="toc-case-3-general-asymmetric-coins-p_1-neq-p_2" class="nav-link" data-scroll-target="#case-3-general-asymmetric-coins-p_1-neq-p_2"><span class="header-section-number">2.3</span> Case 3: General Asymmetric Coins (<span class="math inline">\(p_1 \neq p_2\)</span>)</a>
   <ul class="collapse">
   <li><a href="#exact-analytical-asymptotic-formula-via-laplaces-method" id="toc-exact-analytical-asymptotic-formula-via-laplaces-method" class="nav-link" data-scroll-target="#exact-analytical-asymptotic-formula-via-laplaces-method"><span class="header-section-number">2.3.1</span> Exact Analytical Asymptotic Formula via Laplace’s Method</a></li>
-  <li><a href="#connection-to-legendre-polynomials" id="toc-connection-to-legendre-polynomials" class="nav-link" data-scroll-target="#connection-to-legendre-polynomials"><span class="header-section-number">2.3.2</span> Connection to Legendre Polynomials</a></li>
-  <li><a href="#proof-of-removability-at-complementarity-p_1-p_2-1" id="toc-proof-of-removability-at-complementarity-p_1-p_2-1" class="nav-link" data-scroll-target="#proof-of-removability-at-complementarity-p_1-p_2-1"><span class="header-section-number">2.3.3</span> Proof of Removability at Complementarity (<span class="math inline">\(p_1 + p_2 = 1\)</span>)</a></li>
+  <li><a href="#unifying-check-on-all-three-cases" id="toc-unifying-check-on-all-three-cases" class="nav-link" data-scroll-target="#unifying-check-on-all-three-cases"><span class="header-section-number">2.3.2</span> Unifying Check on All Three Cases</a></li>
   </ul></li>
-  <li><a href="#interactive-visualization" id="toc-interactive-visualization" class="nav-link" data-scroll-target="#interactive-visualization"><span class="header-section-number">2.4</span> Interactive Visualization</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="cmj.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">A Direct and Asymptotic Analysis of Coin Game Tie Probabilities</h1>
+<h1 class="title">A Coin Game</h1>
 </div>
 
 
@@ -115,7 +113,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Dave Kane (Student) </p>
+             <p>David Kane and Dev Raj </p>
           </div>
   </div>
     
@@ -142,12 +140,14 @@ window.Quarto = {
 </section>
 <section id="solution" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Solution</h1>
-<p>We present a comprehensive, self-contained solution. Since the coins are flipped independently, the probability of a tie is the sum of the joint probabilities of obtaining exactly <span class="math inline">\(k\)</span> heads: <span class="math display">\[
+<p>Since the coins are flipped independently, the probability of a tie is the sum of the joint probabilities of obtaining exactly <span class="math inline">\(k\)</span> heads:</p>
+<p><span class="math display">\[
 P_{\text{tie}}(F) = \sum_{k=0}^{F} \binom{F}{k}^2 (p_1 p_2)^k \left[ (1-p_1)(1-p_2) \right]^{F-k}.
 \]</span> We analyze this tie probability by partitioning the parameter space into three progressive regimes.</p>
 <section id="case-1-the-fair-coin-p_1-p_2-12" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="case-1-the-fair-coin-p_1-p_2-12"><span class="header-section-number">2.1</span> Case 1: The Fair Coin (<span class="math inline">\(p_1 = p_2 = 1/2\)</span>)</h2>
-<p>For fair coins, the success and failure probabilities are identical: <span class="math display">\[
+<p>For fair coins, the success and failure probabilities are identical:</p>
+<p><span class="math display">\[
 (p_1 p_2)^k \left[ (1-p_1)(1-p_2) \right]^{F-k} = \left(\frac{1}{4}\right)^k \left(\frac{1}{4}\right)^{F-k} = 4^{-F}.
 \]</span> Since this term is independent of <span class="math inline">\(k\)</span>, we factor it out of the sum: <span class="math display">\[
 P_{\text{tie}}(F) = 4^{-F} \sum_{k=0}^{F} \binom{F}{k}^2.
@@ -160,7 +160,8 @@ P_{\text{tie}}(F) = 4^{-F}\binom{2F}{F}.
 \]</span></p>
 <section id="large-f-asymptotic-approximation" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="large-f-asymptotic-approximation"><span class="header-section-number">2.1.1</span> Large-<span class="math inline">\(F\)</span> Asymptotic Approximation</h3>
-<p>To find the asymptotic behavior, we apply <strong>Stirling’s approximation</strong>, <span class="math inline">\(n! \approx \sqrt{2\pi n}\,(n/e)^n\)</span>, to both factorials in the binomial coefficient <span class="math inline">\(\binom{2F}{F} = \frac{(2F)!}{(F!)^2}\)</span>: <span class="math display">\[
+<p>To find the asymptotic behavior, we apply <strong>Stirling’s approximation</strong>, <span class="math inline">\(n! \approx \sqrt{2\pi n}\,(n/e)^n\)</span>, to both factorials in the binomial coefficient <span class="math inline">\(\binom{2F}{F} = \frac{(2F)!}{(F!)^2}\)</span>:</p>
+<p><span class="math display">\[
 (2F)! \approx \sqrt{4\pi F}\,\frac{(2F)^{2F}}{e^{2F}}, \qquad
 (F!)^2 \approx 2\pi F\,\frac{F^{2F}}{e^{2F}}.
 \]</span> Dividing these expressions: <span class="math display">\[
@@ -171,7 +172,8 @@ P_{\text{tie}}(F) \sim \frac{1}{\sqrt{\pi F}}.
 </section>
 <section id="local-limit-theorem-justification-of-the-sqrtpi-prefactor" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="local-limit-theorem-justification-of-the-sqrtpi-prefactor"><span class="header-section-number">2.1.2</span> Local Limit Theorem Justification of the <span class="math inline">\(\sqrt{\pi}\)</span> Prefactor</h3>
-<p>To understand the origin of the <span class="math inline">\(\sqrt{\pi}\)</span> term rigorously, we apply the <strong>de Moivre-Laplace Local Limit Theorem (LLT)</strong>. Let <span class="math inline">\(S_F\)</span> be the number of heads, which has mean <span class="math inline">\(\mu_F = F/2\)</span> and variance <span class="math inline">\(F \sigma^2 = F/4\)</span>. The LLT states that: <span class="math display">\[
+<p>To understand the origin of the <span class="math inline">\(\sqrt{\pi}\)</span> term rigorously, we apply the <strong>de Moivre-Laplace Local Limit Theorem (LLT)</strong>. Let <span class="math inline">\(S_F\)</span> be the number of heads, which has mean <span class="math inline">\(\mu_F = F/2\)</span> and variance <span class="math inline">\(F \sigma^2 = F/4\)</span>. The LLT states that:</p>
+<p><span class="math display">\[
 \Pr(S_F = k) = \frac{1}{\sqrt{2\pi F \sigma^2}} e^{-\frac{(k - F/2)^2}{2F\sigma^2}} + o\left(\frac{1}{\sqrt{F}}\right).
 \]</span> Since the support of <span class="math inline">\(S_F\)</span> consists of integers with lattice spacing <span class="math inline">\(d = 1\)</span>, we can approximate the sum of squared probabilities as a Riemann sum. Let <span class="math inline">\(\Delta x = \frac{1}{\sqrt{F\sigma^2}}\)</span> and <span class="math inline">\(x_k = \frac{k - F/2}{\sqrt{F\sigma^2}}\)</span>. Then: <span class="math display">\[
 P_{\text{tie}}(F) = \sum_{k=0}^{F} \Pr(S_F = k)^2 \sim \sum_{k=0}^{F} \left( \frac{1}{\sqrt{2\pi F \sigma^2}} e^{-\frac{x_k^2}{2}} \right)^2 = \frac{1}{2\pi F \sigma^2} \sum_{k=0}^{F} e^{-x_k^2}.
@@ -181,23 +183,26 @@ P_{\text{tie}}(F) \sim \frac{1}{2\pi \sqrt{F \sigma^2}} \sum_{k=0}^{F} e^{-x_k^2
 \lim_{F \to \infty} \sum_{k=0}^{F} e^{-x_k^2} \Delta x = \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}.
 \]</span> Substituting <span class="math inline">\(\sigma = 1/2\)</span>: <span class="math display">\[
 P_{\text{tie}}(F) \sim \frac{\sqrt{\pi}}{2\pi \sqrt{F \sigma^2}} = \frac{1}{2 \sigma \sqrt{\pi F}} = \frac{1}{\sqrt{\pi F}}.
-\]</span> This formalizes the “collision probability” heuristic: the <span class="math inline">\(\sqrt{\pi}\)</span> prefactor is the normalization constant of the Gaussian distribution, arising directly from integrating the squared density over a 1D lattice.</p>
+\]</span></p>
+<p>This formalizes the “collision probability” heuristic: the <span class="math inline">\(\sqrt{\pi}\)</span> prefactor is the normalization constant of the Gaussian distribution, arising directly from integrating the squared density over a 1D lattice.</p>
 <hr>
 </section>
 </section>
 <section id="case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12"><span class="header-section-number">2.2</span> Case 2: Matched but Unfair Coins (<span class="math inline">\(p_1 = p_2 = p \neq 1/2\)</span>)</h2>
 <p>When the players use matching biased coins (<span class="math inline">\(p \neq 1/2\)</span>), the term <span class="math inline">\(p^2 \neq (1-p)^2\)</span>, which prevents factoring out the probability term from the sum and breaks the simple Vandermonde collapse.</p>
-<p>However, because the two probability distributions are centered at the identical mean <span class="math inline">\(F p\)</span>, their overlap remains maximized. By the Local Limit Theorem, the tie probability still decays polynomially as <span class="math inline">\(\Theta(F^{-1/2})\)</span>, with the variance determined by the biased coin’s parameter: <span class="math inline">\(\sigma^2 = p(1-p)\)</span>.</p>
-<p>We can express the exact sum analytically in terms of classical <strong>Legendre Polynomials</strong> <span class="math inline">\(P_F(x)\)</span> by mapping it to Gauss’s hypergeometric function <span class="math inline">\(_2F_1(-F, -F; 1; z)\)</span> where <span class="math inline">\(z = \frac{p^2}{(1-p)^2}\)</span>, and applying a classical transformation identity:</p>
-<p><strong>Theorem 1.</strong> <em>For two players flipping matching biased coins (<span class="math inline">\(p_1 = p_2 = p\)</span>), the exact tie probability is:</em> <span class="math display">\[
-P_{\text{tie}}(F) = (2p - 1)^F P_F\left( \frac{1 - 2p + 2p^2}{2p - 1} \right).
+<p>However, because the two probability distributions are centered at the identical mean <span class="math inline">\(F p\)</span>, their overlap remains maximized. The exact tie probability is represented by the direct sum: <span class="math display">\[
+P_{\text{tie}}(F) = \sum_{k=0}^{F} \binom{F}{k}^2 p^{2k} (1-p)^{2(F-k)}.
+\]</span> Since this sum does not admit a simpler elementary algebraic closed-form representation, we analyze its asymptotic behavior as <span class="math inline">\(F \to \infty\)</span>. By applying the de Moivre-Laplace Local Limit Theorem with variance <span class="math inline">\(\sigma^2 = p(1-p)\)</span>, the tie probability still decays polynomially as <span class="math inline">\(\Theta(F^{-1/2})\)</span>, scaled by the variance of the biased coin: <span class="math display">\[
+P_{\text{tie}}(F) \sim \frac{1}{2\sqrt{\pi F p(1-p)}}.
 \]</span></p>
 <hr>
 </section>
 <section id="case-3-general-asymmetric-coins-p_1-neq-p_2" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="case-3-general-asymmetric-coins-p_1-neq-p_2"><span class="header-section-number">2.3</span> Case 3: General Asymmetric Coins (<span class="math inline">\(p_1 \neq p_2\)</span>)</h2>
-<p>When <span class="math inline">\(p_1 \neq p_2\)</span>, the two binomial distributions are centered at different expectations <span class="math inline">\(F p_1\)</span> and <span class="math inline">\(F p_2\)</span>. This shifts the overlap of the distributions into their tail regions, driving the tie probability to decay <strong>exponentially</strong>.</p>
+<p>When <span class="math inline">\(p_1 \neq p_2\)</span>, the two binomial distributions are centered at different expectations <span class="math inline">\(F p_1\)</span> and <span class="math inline">\(F p_2\)</span>. This shifts the overlap of the distributions into their tail regions, driving the tie probability to decay <strong>exponentially</strong>. The exact tie probability is given by the general sum: <span class="math display">\[
+P_{\text{tie}}(F) = \sum_{k=0}^{F} \binom{F}{k}^2 (p_1 p_2)^k \left[ (1-p_1)(1-p_2) \right]^{F-k}.
+\]</span></p>
 <section id="exact-analytical-asymptotic-formula-via-laplaces-method" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="exact-analytical-asymptotic-formula-via-laplaces-method"><span class="header-section-number">2.3.1</span> Exact Analytical Asymptotic Formula via Laplace’s Method</h3>
 <p>We can derive the exact analytical asymptotic formula, including both the exponential rate and the polynomial prefactor, using Laplace’s method for sums.</p>
@@ -208,7 +213,8 @@ P_{\text{tie}}(F) \sim \frac{A+B}{2\sqrt{\pi F AB}} (A+B)^{2F}.
 \]</span></p>
 <p><em>Proof.</em> We rewrite the exact sum by factoring: <span class="math display">\[
 P_{\text{tie}}(F) = \sum_{k=0}^{F} \left[ \binom{F}{k} A^k B^{F-k} \right]^2.
-\]</span> Let <span class="math inline">\(f(k) = \binom{F}{k} A^k B^{F-k}\)</span>. We wish to find the asymptotic sum <span class="math inline">\(\sum f(k)^2\)</span>. The peak of <span class="math inline">\(f(k)\)</span> occurs at its expectation: <span class="math display">\[
+\]</span> Let <span class="math inline">\(f(k) = \binom{F}{k} A^k B^{F-k}\)</span>. We wish to find the asymptotic sum <span class="math inline">\(\sum f(k)^2\)</span>. Since <span class="math inline">\(A+B = \sqrt{p_1 p_2} + \sqrt{(1-p_1)(1-p_2)} &lt; 1\)</span> for all <span class="math inline">\(p_1 \neq p_2\)</span>, the sequence <span class="math inline">\(f(k)\)</span> is not a probability distribution. However, we can express it as a scaled version of a true binomial probability distribution. Specifically, we can write <span class="math inline">\(f(k) = (A+B)^F g(k)\)</span>, where <span class="math inline">\(g(k) = \binom{F}{k} (p^*)^k (q^*)^{F-k}\)</span> is a probability distribution with success parameter <span class="math inline">\(p^* = A/(A+B)\)</span> and failure parameter <span class="math inline">\(q^* = B/(A+B)\)</span>. This allows us to rigorously apply standard asymptotic results and Stirling’s approximation to the peak term of this binomial distribution.</p>
+<p>The peak of <span class="math inline">\(f(k)\)</span> occurs at its expectation: <span class="math display">\[
 k^* = F \cdot p^*, \qquad \text{where } p^* = \frac{A}{A+B}, \ \ q^* = 1 - p^* = \frac{B}{A+B}.
 \]</span> Applying Stirling’s approximation to the peak term <span class="math inline">\(f(k^*)\)</span>: <span class="math display">\[
 \binom{F}{F p^*} A^{F p^*} B^{F q^*} \sim \frac{1}{\sqrt{2\pi F p^* q^*}} (A+B)^F.
@@ -229,208 +235,19 @@ P_{\text{tie}}(F) \sim \frac{(A+B)^{2F}}{2\sqrt{\pi F} \frac{\sqrt{AB}}{A+B}} = 
 \]</span></p>
 <p>Since <span class="math inline">\(A+B = \sqrt{p_1 p_2} + \sqrt{(1-p_1)(1-p_2)} &lt; 1\)</span> for all <span class="math inline">\(p_1 \neq p_2\)</span>, this proves the exponential decay rate rigorously, while providing the exact polynomial prefactor <span class="math inline">\(\Theta(F^{-1/2})\)</span>.</p>
 </section>
-<section id="connection-to-legendre-polynomials" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="connection-to-legendre-polynomials"><span class="header-section-number">2.3.2</span> Connection to Legendre Polynomials</h3>
-<p>Using the classical transformation identity between Gauss’s hypergeometric function <span class="math inline">\(_2F_1\)</span> and Legendre Polynomials, we obtain the general exact closed form for any choice of <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>:</p>
-<p><strong>Theorem 3.</strong> <em>For any success probabilities <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>, the exact tie probability is:</em> <span class="math display">\[
-P_{\text{tie}}(F) = (p_1 + p_2 - 1)^F P_F\left( \frac{1 - p_1 - p_2 + 2 p_1 p_2}{p_1 + p_2 - 1} \right).
-\]</span></p>
+<section id="unifying-check-on-all-three-cases" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="unifying-check-on-all-three-cases"><span class="header-section-number">2.3.2</span> Unifying Check on All Three Cases</h3>
+<p>A beautiful feature of the general asymptotic formula is that it seamlessly unifies all three cases when the parameters are equal (<span class="math inline">\(p_1 = p_2 = p\)</span>):</p>
+<ol type="1">
+<li><strong>Unfair but Matched Coins (<span class="math inline">\(p_1 = p_2 = p\)</span>)</strong>: Setting <span class="math inline">\(p_1 = p_2 = p\)</span> yields <span class="math inline">\(A = p\)</span> and <span class="math inline">\(B = 1-p\)</span>, which gives <span class="math inline">\(A+B = 1\)</span>. The exponential decay factor <span class="math inline">\((A+B)^{2F} = 1^{2F} = 1\)</span> collapses, and the prefactor becomes: <span class="math display">\[
+P_{\text{tie}}(F) \sim \frac{1}{2\sqrt{\pi F p(1-p)}},
+\]</span> recovering the Case 2 polynomial asymptotic decay rate.</li>
+<li><strong>Fair Coins (<span class="math inline">\(p = 1/2\)</span>)</strong>: Further setting <span class="math inline">\(p = 1/2\)</span> yields <span class="math inline">\(p(1-p) = 1/4 \implies \sqrt{p(1-p)} = 1/2\)</span>. The formula reduces to: <span class="math display">\[
+P_{\text{tie}}(F) \sim \frac{1}{\sqrt{\pi F}},
+\]</span> recovering the Case 1 fair-coin baseline.</li>
+</ol>
+<p>This provides a complete, elegant, and unified characterization of the coin game tie probabilities under all configurations.</p>
 </section>
-<section id="proof-of-removability-at-complementarity-p_1-p_2-1" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="proof-of-removability-at-complementarity-p_1-p_2-1"><span class="header-section-number">2.3.3</span> Proof of Removability at Complementarity (<span class="math inline">\(p_1 + p_2 = 1\)</span>)</h3>
-<p>Let <span class="math inline">\(u = p_1 + p_2 - 1\)</span>. The complementary condition is <span class="math inline">\(u = 0\)</span>. For <span class="math inline">\(u \neq 0\)</span>, the Legendre representation is: <span class="math display">\[
-P_{\text{tie}}(F) = u^F P_F\left( \frac{1 - p_1 - p_2 + 2p_1p_2}{u} \right) = u^F P_F\left( \frac{2p_1p_2 - u}{u} \right).
-\]</span> We can prove that the singularity at <span class="math inline">\(u = 0\)</span> is removable and find its limit using two complementary methods: a direct algebraic expansion and an asymptotic limit analysis based on the leading-order behavior of Legendre Polynomials.</p>
-<section id="method-1-asymptotic-limit-via-leading-legendre-terms" class="level4" data-number="2.3.3.1">
-<h4 data-number="2.3.3.1" class="anchored" data-anchor-id="method-1-asymptotic-limit-via-leading-legendre-terms"><span class="header-section-number">2.3.3.1</span> Method 1: Asymptotic Limit via Leading Legendre Terms</h4>
-<p>We recall that as the argument <span class="math inline">\(x \to \pm\infty\)</span>, the Legendre Polynomial <span class="math inline">\(P_F(x)\)</span> of degree <span class="math inline">\(F\)</span> is dominated by its leading-order term: <span class="math display">\[
-P_F(x) \sim \frac{1}{2^F} \binom{2F}{F} x^F.
-\]</span> Under the complementarity condition, as the perturbation <span class="math inline">\(u = p_1+p_2-1 \to 0\)</span>, the argument <span class="math inline">\(x = \frac{2p_1p_2 - u}{u}\)</span> grows without bound (<span class="math inline">\(x \to \pm\infty\)</span>). Substituting this asymptotic behavior: <span class="math display">\[
-P_F\left( \frac{2p_1p_2 - u}{u} \right) \sim \frac{1}{2^F} \binom{2F}{F} \left( \frac{2p_1p_2 - u}{u} \right)^F \sim \frac{1}{2^F} \binom{2F}{F} \frac{2^F (p_1 p_2)^F}{u^F} = \binom{2F}{F} \frac{(p_1 p_2)^F}{u^F}.
-\]</span> Taking the limit as <span class="math inline">\(u \to 0\)</span> of the full expression: <span class="math display">\[
-\lim_{u \to 0} u^F P_F\left( \frac{2p_1p_2 - u}{u} \right) = \lim_{u \to 0} u^F \left[ \binom{2F}{F} \frac{(p_1 p_2)^F}{u^F} \right] = \binom{2F}{F} (p_1 p_2)^F.
-\]</span> Since <span class="math inline">\(p_1 + p_2 = 1 \implies p_2 = 1 - p_1\)</span>, this limits to <span class="math inline">\([p_1(1-p_1)]^F \binom{2F}{F}\)</span>, recovering the Vandermonde-collapsed baseline exactly.</p>
-</section>
-<section id="method-2-exact-algebraic-cancellation" class="level4" data-number="2.3.3.2">
-<h4 data-number="2.3.3.2" class="anchored" data-anchor-id="method-2-exact-algebraic-cancellation"><span class="header-section-number">2.3.3.2</span> Method 2: Exact Algebraic Cancellation</h4>
-<p>To verify that this holds exactly for all <span class="math inline">\(u \neq 0\)</span> (and not just in the limit), we expand the Legendre Polynomial <span class="math inline">\(P_F(x)\)</span> explicitly: <span class="math display">\[
-P_F(x) = \frac{1}{2^F} \sum_{j=0}^{F} \binom{F}{j}^2 (x-1)^{F-j} (x+1)^j.
-\]</span> Substituting <span class="math inline">\(x = \frac{2p_1p_2 - u}{u}\)</span> into the terms: <span class="math display">\[
-x - 1 = \frac{2p_1p_2 - 2u}{u} = \frac{2(p_1p_2 - (p_1+p_2-1))}{u} = \frac{2(1-p_1)(1-p_2)}{u},
-\]</span> <span class="math display">\[
-x + 1 = \frac{2p_1p_2}{u}.
-\]</span> Substituting these back into the sum: <span class="math display">\[
-P_F\left( \frac{2p_1p_2 - u}{u} \right) = \frac{1}{2^F} \sum_{j=0}^{F} \binom{F}{j}^2 \left( \frac{2(1-p_1)(1-p_2)}{u} \right)^{F-j} \left( \frac{2p_1p_2}{u} \right)^j
-\]</span> <span class="math display">\[
-= \frac{1}{2^F} \sum_{j=0}^{F} \binom{F}{j}^2 2^F \left( (1-p_1)(1-p_2) \right)^{F-j} (p_1p_2)^j u^{-F}
-\]</span> <span class="math display">\[
-= u^{-F} \sum_{j=0}^{F} \binom{F}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{F-j}.
-\]</span> Multiplying by <span class="math inline">\(u^F\)</span>, the <span class="math inline">\(u^{-F}\)</span> cancels out completely, showing that for all <span class="math inline">\(u \neq 0\)</span>: <span class="math display">\[
-u^F P_F\left( \frac{2p_1p_2 - u}{u} \right) = \sum_{j=0}^{F} \binom{F}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{F-j} = P_{\text{tie}}(F).
-\]</span> This proves that the singularity at <span class="math inline">\(p_1 + p_2 = 1\)</span> is indeed <strong>removable</strong>, and the limit as <span class="math inline">\(u \to 0\)</span> converges exactly to the Vandermonde-collapsed baseline <span class="math inline">\([p_1(1-p_1)]^F \binom{2F}{F}\)</span>. This holds for all complementary probability pairs, including the fair-coin case (<span class="math inline">\(p_1=p_2=1/2\)</span>). <span class="math inline">\(\blacksquare\)</span></p>
-<hr>
-</section>
-</section>
-</section>
-<section id="interactive-visualization" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="interactive-visualization"><span class="header-section-number">2.4</span> Interactive Visualization</h2>
-<p>The following interactive panels plot <span class="math inline">\(P_{\text{tie}}(F)\)</span> exactly using the formulations derived above, showing the transition from polynomial to exponential decay.</p>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script>
-(function() {
-
-function logBinom(n, k) {
-  if (k < 0 || k > n) return -Infinity;
-  let v = 0;
-  for (let i = 0; i < k; i++) v += Math.log(n - i) - Math.log(i + 1);
-  return v;
-}
-
-function tieProb(F, p1, p2) {
-  let total = 0;
-  for (let k = 0; k <= F; k++) {
-    const logB = 2 * logBinom(F, k);
-    const logP = k * Math.log(p1 * p2) + (F - k) * Math.log((1 - p1) * (1 - p2));
-    const term = Math.exp(logB + logP);
-    if (isFinite(term)) total += term;
-  }
-  return total;
-}
-
-const Fs = Array.from({length: 50}, (_, i) => i + 1);
-
-const COLORS = {
-  blue:   '#2a78d6',
-  red:    '#e34948',
-  green:  '#1baf7a',
-  amber:  '#eda100',
-  violet: '#4a3aa7',
-  gray:   '#888'
-};
-
-const commonOpts = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: true, position: 'top',
-      labels: { boxWidth: 14, font: { size: 11 } } },
-    tooltip: {
-      callbacks: {
-        label: ctx => `F=${Fs[ctx.dataIndex]}: ${(ctx.parsed.y * 100).toFixed(4)}%`
-      }
-    }
-  },
-  scales: {
-    x: {
-      title: { display: true, text: 'Number of flips (F)', font: { size: 11 } },
-      ticks: { maxTicksLimit: 10 }
-    },
-    y: {
-      title: { display: true, text: 'P_tie(F)', font: { size: 11 } },
-      ticks: { callback: v => (v * 100).toFixed(1) + '%' },
-      min: 0
-    }
-  }
-};
-
-function makeDataset(label, p1, p2, color, dash) {
-  return {
-    label,
-    data: Fs.map(F => tieProb(F, p1, p2)),
-    borderColor: color,
-    borderWidth: 1.8,
-    borderDash: dash || [],
-    pointRadius: 0,
-    tension: 0.2,
-    fill: false
-  };
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-
-  // --- Panel A: symmetric cases, varying p ---
-  new Chart(document.getElementById('coinChartA'), {
-    type: 'line',
-    data: {
-      labels: Fs,
-      datasets: [
-        makeDataset('p = 0.5 (fair coin)', 0.5, 0.5, COLORS.blue),
-        makeDataset('p = 0.3', 0.3, 0.3, COLORS.green),
-        makeDataset('p = 0.1', 0.1, 0.1, COLORS.amber)
-      ]
-    },
-    options: Object.assign({}, commonOpts, {
-      plugins: Object.assign({}, commonOpts.plugins, {
-        title: { display: true, text: 'Panel A: Symmetric Cases (p₁ = p₂ = p)' }
-      })
-    })
-  });
-
-  // --- Panel B: symmetric vs complementary ---
-  new Chart(document.getElementById('coinChartB'), {
-    type: 'line',
-    data: {
-      labels: Fs,
-      datasets: [
-        makeDataset('p₁ = p₂ = 0.3 (non-complementary)', 0.3, 0.3, COLORS.green),
-        makeDataset('p₁ = 0.3, p₂ = 0.7 (complementary)', 0.3, 0.7, COLORS.violet, [4, 4]),
-        makeDataset('p₁ = p₂ = 0.5 (both)', 0.5, 0.5, COLORS.blue)
-      ]
-    },
-    options: Object.assign({}, commonOpts, {
-      plugins: Object.assign({}, commonOpts.plugins, {
-        title: { display: true, text: 'Panel B: Role of Complementarity (p₁ + p₂ = 1)' }
-      })
-    })
-  });
-
-  // --- Panel C: asymmetric cases, log scale ---
-  const logOpts = JSON.parse(JSON.stringify(commonOpts));
-  logOpts.scales.y = {
-    type: 'logarithmic',
-    title: { display: true, text: 'P_tie(F) [log scale]', font: { size: 11 } },
-    min: 0.00001,
-    max: 1.0,
-    ticks: {
-      callback: function(value) {
-        const log = Math.log10(value);
-        if (Math.abs(log - Math.round(log)) < 1e-9) {
-          return value.toExponential(0);
-        }
-        return null;
-      }
-    }
-  };
-  logOpts.plugins.tooltip.callbacks.label = ctx => `F=${Fs[ctx.dataIndex]}: ${ctx.parsed.y.toExponential(4)}`;
-
-  new Chart(document.getElementById('coinChartC'), {
-    type: 'line',
-    data: {
-      labels: Fs,
-      datasets: [
-        makeDataset('p₁=0.5, p₂=0.5 (symmetric)', 0.5, 0.5, COLORS.blue),
-        makeDataset('p₁=0.4, p₂=0.6 (asymmetric, diff=0.2)', 0.4, 0.6, COLORS.amber),
-        makeDataset('p₁=0.3, p₂=0.7 (asymmetric, diff=0.4)', 0.3, 0.7, COLORS.red),
-        makeDataset('p₁=0.1, p₂=0.9 (asymmetric, diff=0.8)', 0.1, 0.9, COLORS.violet)
-      ]
-    },
-    options: Object.assign({}, logOpts, {
-      plugins: Object.assign({}, logOpts.plugins, {
-        title: { display: true, text: 'Panel C: Asymmetric Cases (Log Scale)' }
-      })
-    })
-  });
-
-});
-})();
-</script>
-
-<div style="display: flex; flex-direction: column; gap: 20px; margin: 2rem 0;">
-  <div style="width: 100%; height: 260px;"><canvas id="coinChartA"></canvas></div>
-  <div style="width: 100%; height: 260px;"><canvas id="coinChartB"></canvas></div>
-  <div style="width: 100%; height: 260px;"><canvas id="coinChartC"></canvas></div>
-</div>
-<hr>
 </section>
 </section>
 <section id="references" class="level1" data-number="3">
