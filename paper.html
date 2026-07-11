@@ -81,89 +81,94 @@ window.Quarto = {
    
   <ul>
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract"><span class="header-section-number">1</span> Abstract</a></li>
-  <li><a href="#the-coin-game-a-progressive-pedagogical-walkthrough" id="toc-the-coin-game-a-progressive-pedagogical-walkthrough" class="nav-link" data-scroll-target="#the-coin-game-a-progressive-pedagogical-walkthrough"><span class="header-section-number">2</span> The Coin Game: A Progressive Pedagogical Walkthrough</a>
+  <li><a href="#mathematical-notation-and-asymptotic-guide" id="toc-mathematical-notation-and-asymptotic-guide" class="nav-link" data-scroll-target="#mathematical-notation-and-asymptotic-guide"><span class="header-section-number">2</span> Mathematical Notation and Asymptotic Guide</a></li>
+  <li><a href="#the-coin-game-a-progressive-pedagogical-walkthrough" id="toc-the-coin-game-a-progressive-pedagogical-walkthrough" class="nav-link" data-scroll-target="#the-coin-game-a-progressive-pedagogical-walkthrough"><span class="header-section-number">3</span> The Coin Game: A Progressive Pedagogical Walkthrough</a>
   <ul class="collapse">
-  <li><a href="#basic-overall-formula-derivation" id="toc-basic-overall-formula-derivation" class="nav-link" data-scroll-target="#basic-overall-formula-derivation"><span class="header-section-number">2.1</span> Basic Overall Formula Derivation</a></li>
-  <li><a href="#case-1-the-fair-coin-p_1-p_2-12" id="toc-case-1-the-fair-coin-p_1-p_2-12" class="nav-link" data-scroll-target="#case-1-the-fair-coin-p_1-p_2-12"><span class="header-section-number">2.2</span> Case 1: The Fair Coin (<span class="math inline">\(p_1 = p_2 = 1/2\)</span>)</a>
+  <li><a href="#basic-overall-formula-derivation" id="toc-basic-overall-formula-derivation" class="nav-link" data-scroll-target="#basic-overall-formula-derivation"><span class="header-section-number">3.1</span> Basic Overall Formula Derivation</a></li>
+  <li><a href="#case-1-the-fair-coin-p_1-p_2-12" id="toc-case-1-the-fair-coin-p_1-p_2-12" class="nav-link" data-scroll-target="#case-1-the-fair-coin-p_1-p_2-12"><span class="header-section-number">3.2</span> Case 1: The Fair Coin (<span class="math inline">\(p_1 = p_2 = 1/2\)</span>)</a>
   <ul class="collapse">
-  <li><a href="#large-r-asymptotic-approximation" id="toc-large-r-asymptotic-approximation" class="nav-link" data-scroll-target="#large-r-asymptotic-approximation"><span class="header-section-number">2.2.1</span> Large-<span class="math inline">\(R\)</span> Asymptotic Approximation</a></li>
-  <li><a href="#analytical-justification-of-the-sqrtpi-prefactor" id="toc-analytical-justification-of-the-sqrtpi-prefactor" class="nav-link" data-scroll-target="#analytical-justification-of-the-sqrtpi-prefactor"><span class="header-section-number">2.2.2</span> Analytical Justification of the <span class="math inline">\(\sqrt{\pi}\)</span> Prefactor</a></li>
+  <li><a href="#large-r-asymptotic-approximation" id="toc-large-r-asymptotic-approximation" class="nav-link" data-scroll-target="#large-r-asymptotic-approximation"><span class="header-section-number">3.2.1</span> Large-<span class="math inline">\(R\)</span> Asymptotic Approximation</a></li>
+  <li><a href="#analytical-justification-of-the-sqrtpi-prefactor" id="toc-analytical-justification-of-the-sqrtpi-prefactor" class="nav-link" data-scroll-target="#analytical-justification-of-the-sqrtpi-prefactor"><span class="header-section-number">3.2.2</span> Analytical Justification of the <span class="math inline">\(\sqrt{\pi}\)</span> Prefactor</a></li>
   </ul></li>
-  <li><a href="#case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12" id="toc-case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12" class="nav-link" data-scroll-target="#case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12"><span class="header-section-number">2.3</span> Case 2: Matched but Unfair Coins (<span class="math inline">\(p_1 = p_2 = p \neq 1/2\)</span>)</a></li>
-  <li><a href="#case-3-general-asymmetric-coins-p_1-neq-p_2" id="toc-case-3-general-asymmetric-coins-p_1-neq-p_2" class="nav-link" data-scroll-target="#case-3-general-asymmetric-coins-p_1-neq-p_2"><span class="header-section-number">2.4</span> Case 3: General Asymmetric Coins (<span class="math inline">\(p_1 \neq p_2\)</span>)</a>
+  <li><a href="#case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12" id="toc-case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12" class="nav-link" data-scroll-target="#case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12"><span class="header-section-number">3.3</span> Case 2: Matched but Unfair Coins (<span class="math inline">\(p_1 = p_2 = p \neq 1/2\)</span>)</a></li>
+  <li><a href="#case-3-general-asymmetric-coins-p_1-neq-p_2" id="toc-case-3-general-asymmetric-coins-p_1-neq-p_2" class="nav-link" data-scroll-target="#case-3-general-asymmetric-coins-p_1-neq-p_2"><span class="header-section-number">3.4</span> Case 3: General Asymmetric Coins (<span class="math inline">\(p_1 \neq p_2\)</span>)</a>
   <ul class="collapse">
-  <li><a href="#exact-analytical-asymptotic-formula-via-laplaces-method" id="toc-exact-analytical-asymptotic-formula-via-laplaces-method" class="nav-link" data-scroll-target="#exact-analytical-asymptotic-formula-via-laplaces-method"><span class="header-section-number">2.4.1</span> Exact Analytical Asymptotic Formula via Laplace’s Method</a></li>
-  <li><a href="#connection-to-classical-special-functions" id="toc-connection-to-classical-special-functions" class="nav-link" data-scroll-target="#connection-to-classical-special-functions"><span class="header-section-number">2.4.2</span> Connection to Classical Special Functions</a></li>
-  <li><a href="#proof-of-removability-at-complementarity-p_1-p_2-1" id="toc-proof-of-removability-at-complementarity-p_1-p_2-1" class="nav-link" data-scroll-target="#proof-of-removability-at-complementarity-p_1-p_2-1"><span class="header-section-number">2.4.3</span> Proof of Removability at Complementarity (<span class="math inline">\(p_1 + p_2 = 1\)</span>)</a></li>
+  <li><a href="#exact-analytical-asymptotic-formula-via-laplaces-method" id="toc-exact-analytical-asymptotic-formula-via-laplaces-method" class="nav-link" data-scroll-target="#exact-analytical-asymptotic-formula-via-laplaces-method"><span class="header-section-number">3.4.1</span> Exact Analytical Asymptotic Formula via Laplace’s Method</a></li>
+  <li><a href="#connection-to-classical-special-functions" id="toc-connection-to-classical-special-functions" class="nav-link" data-scroll-target="#connection-to-classical-special-functions"><span class="header-section-number">3.4.2</span> Connection to Classical Special Functions</a></li>
+  <li><a href="#proof-of-removability-at-complementarity-p_1-p_2-1" id="toc-proof-of-removability-at-complementarity-p_1-p_2-1" class="nav-link" data-scroll-target="#proof-of-removability-at-complementarity-p_1-p_2-1"><span class="header-section-number">3.4.3</span> Proof of Removability at Complementarity (<span class="math inline">\(p_1 + p_2 = 1\)</span>)</a></li>
   </ul></li>
-  <li><a href="#visualizing-the-progressive-coin-game" id="toc-visualizing-the-progressive-coin-game" class="nav-link" data-scroll-target="#visualizing-the-progressive-coin-game"><span class="header-section-number">2.5</span> Visualizing the Progressive Coin Game</a>
+  <li><a href="#visualizing-the-progressive-coin-game" id="toc-visualizing-the-progressive-coin-game" class="nav-link" data-scroll-target="#visualizing-the-progressive-coin-game"><span class="header-section-number">3.5</span> Visualizing the Progressive Coin Game</a>
   <ul class="collapse">
-  <li><a href="#interpretation-of-the-charts" id="toc-interpretation-of-the-charts" class="nav-link" data-scroll-target="#interpretation-of-the-charts"><span class="header-section-number">2.5.1</span> Interpretation of the Charts</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#affine-invariance-and-range-compatibility-in-the-binary-case" id="toc-affine-invariance-and-range-compatibility-in-the-binary-case" class="nav-link" data-scroll-target="#affine-invariance-and-range-compatibility-in-the-binary-case"><span class="header-section-number">3</span> Affine Invariance and Range Compatibility in the Binary Case</a>
-  <ul class="collapse">
-  <li><a href="#affine-invariance-of-binary-distributions" id="toc-affine-invariance-of-binary-distributions" class="nav-link" data-scroll-target="#affine-invariance-of-binary-distributions"><span class="header-section-number">3.1</span> Affine Invariance of Binary Distributions</a>
-  <ul class="collapse">
-  <li><a href="#pedagogical-note" id="toc-pedagogical-note" class="nav-link" data-scroll-target="#pedagogical-note"><span class="header-section-number">3.1.1</span> Pedagogical Note</a></li>
-  </ul></li>
-  <li><a href="#range-compatibility-and-linear-diophantine-equations" id="toc-range-compatibility-and-linear-diophantine-equations" class="nav-link" data-scroll-target="#range-compatibility-and-linear-diophantine-equations"><span class="header-section-number">3.2</span> Range Compatibility and Linear Diophantine Equations</a>
-  <ul class="collapse">
-  <li><a href="#structural-impossibility" id="toc-structural-impossibility" class="nav-link" data-scroll-target="#structural-impossibility"><span class="header-section-number">3.2.1</span> Structural Impossibility</a></li>
-  <li><a href="#general-parametric-solution-family" id="toc-general-parametric-solution-family" class="nav-link" data-scroll-target="#general-parametric-solution-family"><span class="header-section-number">3.2.2</span> General Parametric Solution Family</a></li>
-  <li><a href="#step-by-step-pedagogical-walkthrough" id="toc-step-by-step-pedagogical-walkthrough" class="nav-link" data-scroll-target="#step-by-step-pedagogical-walkthrough"><span class="header-section-number">3.2.3</span> Step-by-Step Pedagogical Walkthrough</a></li>
+  <li><a href="#interpretation-of-the-charts" id="toc-interpretation-of-the-charts" class="nav-link" data-scroll-target="#interpretation-of-the-charts"><span class="header-section-number">3.5.1</span> Interpretation of the Charts</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#the-3-sided-die-from-standard-to-mismatched-supports" id="toc-the-3-sided-die-from-standard-to-mismatched-supports" class="nav-link" data-scroll-target="#the-3-sided-die-from-standard-to-mismatched-supports"><span class="header-section-number">4</span> The 3-Sided Die: From Standard to Mismatched Supports</a>
+  <li><a href="#affine-invariance-and-range-compatibility-in-the-binary-case" id="toc-affine-invariance-and-range-compatibility-in-the-binary-case" class="nav-link" data-scroll-target="#affine-invariance-and-range-compatibility-in-the-binary-case"><span class="header-section-number">4</span> Affine Invariance and Range Compatibility in the Binary Case</a>
   <ul class="collapse">
-  <li><a href="#standard-case-general-trinomial-formula" id="toc-standard-case-general-trinomial-formula" class="nav-link" data-scroll-target="#standard-case-general-trinomial-formula"><span class="header-section-number">4.1</span> Standard Case: General Trinomial Formula</a></li>
-  <li><a href="#case-1-the-fair-3-sided-die-p_i-q_i-13" id="toc-case-1-the-fair-3-sided-die-p_i-q_i-13" class="nav-link" data-scroll-target="#case-1-the-fair-3-sided-die-p_i-q_i-13"><span class="header-section-number">4.2</span> Case 1: The Fair 3-Sided Die (<span class="math inline">\(p_i = q_i = 1/3\)</span>)</a></li>
-  <li><a href="#case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13" id="toc-case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13" class="nav-link" data-scroll-target="#case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13"><span class="header-section-number">4.3</span> Case 2: Matched but Unfair 3-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq (1/3, 1/3, 1/3)\)</span>)</a></li>
-  <li><a href="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq" id="toc-case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq" class="nav-link" data-scroll-target="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq"><span class="header-section-number">4.4</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</a></li>
-  <li><a href="#moving-beyond-standard-supports-why-the-side-values-matter" id="toc-moving-beyond-standard-supports-why-the-side-values-matter" class="nav-link" data-scroll-target="#moving-beyond-standard-supports-why-the-side-values-matter"><span class="header-section-number">4.5</span> Moving Beyond Standard Supports: Why the Side Values Matter</a>
+  <li><a href="#affine-invariance-of-binary-distributions" id="toc-affine-invariance-of-binary-distributions" class="nav-link" data-scroll-target="#affine-invariance-of-binary-distributions"><span class="header-section-number">4.1</span> Affine Invariance of Binary Distributions</a>
   <ul class="collapse">
-  <li><a href="#the-breakdown-of-invariance" id="toc-the-breakdown-of-invariance" class="nav-link" data-scroll-target="#the-breakdown-of-invariance"><span class="header-section-number">4.5.1</span> The Breakdown of Invariance</a></li>
+  <li><a href="#pedagogical-note" id="toc-pedagogical-note" class="nav-link" data-scroll-target="#pedagogical-note"><span class="header-section-number">4.1.1</span> Pedagogical Note</a></li>
   </ul></li>
-  <li><a href="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq" id="toc-case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq" class="nav-link" data-scroll-target="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq"><span class="header-section-number">4.6</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</a></li>
-  <li><a href="#case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" id="toc-case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="nav-link" data-scroll-target="#case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">4.7</span> Case 5: The General Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</a>
+  <li><a href="#range-compatibility-and-linear-diophantine-equations" id="toc-range-compatibility-and-linear-diophantine-equations" class="nav-link" data-scroll-target="#range-compatibility-and-linear-diophantine-equations"><span class="header-section-number">4.2</span> Range Compatibility and Linear Diophantine Equations</a>
   <ul class="collapse">
-  <li><a href="#proving-the-kl-and-support-distance-intuition" id="toc-proving-the-kl-and-support-distance-intuition" class="nav-link" data-scroll-target="#proving-the-kl-and-support-distance-intuition"><span class="header-section-number">4.7.1</span> Proving the KL and Support Distance Intuition</a></li>
-  </ul></li>
-  <li><a href="#the-3-sided-collision-lattice-and-trades" id="toc-the-3-sided-collision-lattice-and-trades" class="nav-link" data-scroll-target="#the-3-sided-collision-lattice-and-trades"><span class="header-section-number">4.8</span> The 3-Sided Collision Lattice and Trades</a>
-  <ul class="collapse">
-  <li><a href="#pedagogical-trade-walkthrough" id="toc-pedagogical-trade-walkthrough" class="nav-link" data-scroll-target="#pedagogical-trade-walkthrough"><span class="header-section-number">4.8.1</span> Pedagogical Trade Walkthrough</a></li>
+  <li><a href="#structural-impossibility" id="toc-structural-impossibility" class="nav-link" data-scroll-target="#structural-impossibility"><span class="header-section-number">4.2.1</span> Structural Impossibility</a></li>
+  <li><a href="#general-parametric-solution-family" id="toc-general-parametric-solution-family" class="nav-link" data-scroll-target="#general-parametric-solution-family"><span class="header-section-number">4.2.2</span> General Parametric Solution Family</a></li>
+  <li><a href="#step-by-step-pedagogical-walkthrough" id="toc-step-by-step-pedagogical-walkthrough" class="nav-link" data-scroll-target="#step-by-step-pedagogical-walkthrough"><span class="header-section-number">4.2.3</span> Step-by-Step Pedagogical Walkthrough</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#unequal-toss-amounts-a-progressive-case-by-case-analysis" id="toc-unequal-toss-amounts-a-progressive-case-by-case-analysis" class="nav-link" data-scroll-target="#unequal-toss-amounts-a-progressive-case-by-case-analysis"><span class="header-section-number">5</span> Unequal Toss Amounts: A Progressive Case-by-Case Analysis</a>
+  <li><a href="#the-3-sided-die-from-standard-to-mismatched-supports" id="toc-the-3-sided-die-from-standard-to-mismatched-supports" class="nav-link" data-scroll-target="#the-3-sided-die-from-standard-to-mismatched-supports"><span class="header-section-number">5</span> The 3-Sided Die: From Standard to Mismatched Supports</a>
   <ul class="collapse">
-  <li><a href="#section-4.2-the-coin-game-with-unequal-tosses" id="toc-section-4.2-the-coin-game-with-unequal-tosses" class="nav-link" data-scroll-target="#section-4.2-the-coin-game-with-unequal-tosses"><span class="header-section-number">5.1</span> Section 4.2: The Coin Game with Unequal Tosses</a>
+  <li><a href="#standard-case-general-trinomial-formula" id="toc-standard-case-general-trinomial-formula" class="nav-link" data-scroll-target="#standard-case-general-trinomial-formula"><span class="header-section-number">5.1</span> Standard Case: General Trinomial Formula</a></li>
+  <li><a href="#case-1-the-fair-3-sided-die-p_i-q_i-13" id="toc-case-1-the-fair-3-sided-die-p_i-q_i-13" class="nav-link" data-scroll-target="#case-1-the-fair-3-sided-die-p_i-q_i-13"><span class="header-section-number">5.2</span> Case 1: The Fair 3-Sided Die (<span class="math inline">\(p_i = q_i = 1/3\)</span>)</a></li>
+  <li><a href="#case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13" id="toc-case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13" class="nav-link" data-scroll-target="#case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13"><span class="header-section-number">5.3</span> Case 2: Matched but Unfair 3-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq (1/3, 1/3, 1/3)\)</span>)</a></li>
+  <li><a href="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq" id="toc-case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq" class="nav-link" data-scroll-target="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq"><span class="header-section-number">5.4</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</a></li>
+  <li><a href="#moving-beyond-standard-supports-why-the-side-values-matter" id="toc-moving-beyond-standard-supports-why-the-side-values-matter" class="nav-link" data-scroll-target="#moving-beyond-standard-supports-why-the-side-values-matter"><span class="header-section-number">5.5</span> Moving Beyond Standard Supports: Why the Side Values Matter</a>
   <ul class="collapse">
-  <li><a href="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101" id="toc-case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101" class="nav-link" data-scroll-target="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101"><span class="header-section-number">5.1.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</a></li>
-  <li><a href="#case-2-proportional-toss-counts-r_2-c-r_1" id="toc-case-2-proportional-toss-counts-r_2-c-r_1" class="nav-link" data-scroll-target="#case-2-proportional-toss-counts-r_2-c-r_1"><span class="header-section-number">5.1.2</span> Case 2: Proportional Toss Counts (<span class="math inline">\(R_2 = c R_1\)</span>)</a></li>
+  <li><a href="#the-breakdown-of-invariance" id="toc-the-breakdown-of-invariance" class="nav-link" data-scroll-target="#the-breakdown-of-invariance"><span class="header-section-number">5.5.1</span> The Breakdown of Invariance</a></li>
   </ul></li>
-  <li><a href="#section-4.3-the-3-sided-die-with-unequal-tosses" id="toc-section-4.3-the-3-sided-die-with-unequal-tosses" class="nav-link" data-scroll-target="#section-4.3-the-3-sided-die-with-unequal-tosses"><span class="header-section-number">5.2</span> Section 4.3: The 3-Sided Die with Unequal Tosses</a>
+  <li><a href="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq" id="toc-case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq" class="nav-link" data-scroll-target="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq"><span class="header-section-number">5.6</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</a></li>
+  <li><a href="#case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" id="toc-case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="nav-link" data-scroll-target="#case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">5.7</span> Case 5: The General Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</a>
   <ul class="collapse">
-  <li><a href="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1" id="toc-case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1" class="nav-link" data-scroll-target="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1"><span class="header-section-number">5.2.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</a></li>
-  <li><a href="#the-impact-of-non-uniform-supports" id="toc-the-impact-of-non-uniform-supports" class="nav-link" data-scroll-target="#the-impact-of-non-uniform-supports"><span class="header-section-number">5.2.2</span> The Impact of Non-Uniform Supports</a></li>
+  <li><a href="#proving-the-kl-and-support-distance-intuition" id="toc-proving-the-kl-and-support-distance-intuition" class="nav-link" data-scroll-target="#proving-the-kl-and-support-distance-intuition"><span class="header-section-number">5.7.1</span> Proving the KL and Support Distance Intuition</a></li>
   </ul></li>
-  <li><a href="#section-4.4-the-general-n-sided-die-with-unequal-tosses" id="toc-section-4.4-the-general-n-sided-die-with-unequal-tosses" class="nav-link" data-scroll-target="#section-4.4-the-general-n-sided-die-with-unequal-tosses"><span class="header-section-number">5.3</span> Section 4.4: The General <span class="math inline">\(n\)</span>-Sided Die with Unequal Tosses</a></li>
-  </ul></li>
-  <li><a href="#the-general-n-sided-case-slow-progressive-analytical-breakdown" id="toc-the-general-n-sided-case-slow-progressive-analytical-breakdown" class="nav-link" data-scroll-target="#the-general-n-sided-case-slow-progressive-analytical-breakdown"><span class="header-section-number">6</span> The General <span class="math inline">\(n\)</span>-Sided Case: Slow, Progressive Analytical Breakdown</a>
+  <li><a href="#the-3-sided-collision-lattice-and-trades" id="toc-the-3-sided-collision-lattice-and-trades" class="nav-link" data-scroll-target="#the-3-sided-collision-lattice-and-trades"><span class="header-section-number">5.8</span> The 3-Sided Collision Lattice and Trades</a>
   <ul class="collapse">
-  <li><a href="#case-1-the-fair-n-sided-die-p_i-q_i-1n" id="toc-case-1-the-fair-n-sided-die-p_i-q_i-1n" class="nav-link" data-scroll-target="#case-1-the-fair-n-sided-die-p_i-q_i-1n"><span class="header-section-number">6.1</span> Case 1: The Fair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(p_i = q_i = 1/n\)</span>)</a></li>
-  <li><a href="#case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n" id="toc-case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n" class="nav-link" data-scroll-target="#case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n"><span class="header-section-number">6.2</span> Case 2: Matched but Unfair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq \vec{1}/n\)</span>)</a></li>
-  <li><a href="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1" id="toc-case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1" class="nav-link" data-scroll-target="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1"><span class="header-section-number">6.3</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</a></li>
-  <li><a href="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1" id="toc-case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1" class="nav-link" data-scroll-target="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1"><span class="header-section-number">6.4</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</a></li>
-  <li><a href="#case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" id="toc-case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="nav-link" data-scroll-target="#case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">6.5</span> Case 5: The General <span class="math inline">\(n\)</span>-Sided Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</a></li>
-  <li><a href="#case-6-the-n-sided-collision-lattice-and-geometric-projections" id="toc-case-6-the-n-sided-collision-lattice-and-geometric-projections" class="nav-link" data-scroll-target="#case-6-the-n-sided-collision-lattice-and-geometric-projections"><span class="header-section-number">6.6</span> Case 6: The <span class="math inline">\(n\)</span>-Sided Collision Lattice and Geometric Projections</a>
+  <li><a href="#pedagogical-trade-walkthrough" id="toc-pedagogical-trade-walkthrough" class="nav-link" data-scroll-target="#pedagogical-trade-walkthrough"><span class="header-section-number">5.8.1</span> Pedagogical Trade Walkthrough</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#unequal-toss-amounts-a-progressive-case-by-case-analysis" id="toc-unequal-toss-amounts-a-progressive-case-by-case-analysis" class="nav-link" data-scroll-target="#unequal-toss-amounts-a-progressive-case-by-case-analysis"><span class="header-section-number">6</span> Unequal Toss Amounts: A Progressive Case-by-Case Analysis</a>
   <ul class="collapse">
-  <li><a href="#resolution-and-proof-of-conjecture-8.2-now-theorem-5.7" id="toc-resolution-and-proof-of-conjecture-8.2-now-theorem-5.7" class="nav-link" data-scroll-target="#resolution-and-proof-of-conjecture-8.2-now-theorem-5.7"><span class="header-section-number">6.6.1</span> Resolution and Proof of Conjecture 8.2 (Now Theorem 5.7)</a></li>
-  <li><a href="#geometric-ellipsoid-projection-interpretation" id="toc-geometric-ellipsoid-projection-interpretation" class="nav-link" data-scroll-target="#geometric-ellipsoid-projection-interpretation"><span class="header-section-number">6.6.2</span> Geometric “Ellipsoid Projection” Interpretation</a></li>
+  <li><a href="#section-4.2-the-coin-game-with-unequal-tosses" id="toc-section-4.2-the-coin-game-with-unequal-tosses" class="nav-link" data-scroll-target="#section-4.2-the-coin-game-with-unequal-tosses"><span class="header-section-number">6.1</span> Section 4.2: The Coin Game with Unequal Tosses</a>
+  <ul class="collapse">
+  <li><a href="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101" id="toc-case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101" class="nav-link" data-scroll-target="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101"><span class="header-section-number">6.1.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</a></li>
+  <li><a href="#case-2-proportional-toss-counts-r_2-c-r_1" id="toc-case-2-proportional-toss-counts-r_2-c-r_1" class="nav-link" data-scroll-target="#case-2-proportional-toss-counts-r_2-c-r_1"><span class="header-section-number">6.1.2</span> Case 2: Proportional Toss Counts (<span class="math inline">\(R_2 = c R_1\)</span>)</a></li>
   </ul></li>
-  <li><a href="#case-7-numerical-implementation-and-validation" id="toc-case-7-numerical-implementation-and-validation" class="nav-link" data-scroll-target="#case-7-numerical-implementation-and-validation"><span class="header-section-number">6.7</span> Case 7: Numerical Implementation and Validation</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6.8</span> Summary</a></li>
+  <li><a href="#section-4.3-the-3-sided-die-with-unequal-tosses" id="toc-section-4.3-the-3-sided-die-with-unequal-tosses" class="nav-link" data-scroll-target="#section-4.3-the-3-sided-die-with-unequal-tosses"><span class="header-section-number">6.2</span> Section 4.3: The 3-Sided Die with Unequal Tosses</a>
+  <ul class="collapse">
+  <li><a href="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1" id="toc-case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1" class="nav-link" data-scroll-target="#case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1"><span class="header-section-number">6.2.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</a></li>
+  <li><a href="#the-impact-of-non-uniform-supports" id="toc-the-impact-of-non-uniform-supports" class="nav-link" data-scroll-target="#the-impact-of-non-uniform-supports"><span class="header-section-number">6.2.2</span> The Impact of Non-Uniform Supports</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
+  <li><a href="#section-4.4-the-general-n-sided-die-with-unequal-tosses" id="toc-section-4.4-the-general-n-sided-die-with-unequal-tosses" class="nav-link" data-scroll-target="#section-4.4-the-general-n-sided-die-with-unequal-tosses"><span class="header-section-number">6.3</span> Section 4.4: The General <span class="math inline">\(n\)</span>-Sided Die with Unequal Tosses</a></li>
+  </ul></li>
+  <li><a href="#the-general-n-sided-case-slow-progressive-analytical-breakdown" id="toc-the-general-n-sided-case-slow-progressive-analytical-breakdown" class="nav-link" data-scroll-target="#the-general-n-sided-case-slow-progressive-analytical-breakdown"><span class="header-section-number">7</span> The General <span class="math inline">\(n\)</span>-Sided Case: Slow, Progressive Analytical Breakdown</a>
+  <ul class="collapse">
+  <li><a href="#case-1-the-fair-n-sided-die-p_i-q_i-1n" id="toc-case-1-the-fair-n-sided-die-p_i-q_i-1n" class="nav-link" data-scroll-target="#case-1-the-fair-n-sided-die-p_i-q_i-1n"><span class="header-section-number">7.1</span> Case 1: The Fair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(p_i = q_i = 1/n\)</span>)</a></li>
+  <li><a href="#case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n" id="toc-case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n" class="nav-link" data-scroll-target="#case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n"><span class="header-section-number">7.2</span> Case 2: Matched but Unfair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq \vec{1}/n\)</span>)</a></li>
+  <li><a href="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1" id="toc-case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1" class="nav-link" data-scroll-target="#case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1"><span class="header-section-number">7.3</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</a></li>
+  <li><a href="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1" id="toc-case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1" class="nav-link" data-scroll-target="#case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1"><span class="header-section-number">7.4</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</a></li>
+  <li><a href="#case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" id="toc-case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="nav-link" data-scroll-target="#case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">7.5</span> Case 5: The General <span class="math inline">\(n\)</span>-Sided Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</a>
+  <ul class="collapse">
+  <li><a href="#variational-derivation-of-the-gibbsboltzmann-distribution" id="toc-variational-derivation-of-the-gibbsboltzmann-distribution" class="nav-link" data-scroll-target="#variational-derivation-of-the-gibbsboltzmann-distribution"><span class="header-section-number">7.5.1</span> Variational Derivation of the Gibbs/Boltzmann Distribution</a></li>
+  </ul></li>
+  <li><a href="#case-6-the-n-sided-collision-lattice-and-geometric-projections" id="toc-case-6-the-n-sided-collision-lattice-and-geometric-projections" class="nav-link" data-scroll-target="#case-6-the-n-sided-collision-lattice-and-geometric-projections"><span class="header-section-number">7.6</span> Case 6: The <span class="math inline">\(n\)</span>-Sided Collision Lattice and Geometric Projections</a>
+  <ul class="collapse">
+  <li><a href="#geometric-projection-and-asymptotic-decay" id="toc-geometric-projection-and-asymptotic-decay" class="nav-link" data-scroll-target="#geometric-projection-and-asymptotic-decay"><span class="header-section-number">7.6.1</span> Geometric Projection and Asymptotic Decay</a></li>
+  <li><a href="#resolution-and-proof-of-conjecture-8.2-now-theorem-5.7" id="toc-resolution-and-proof-of-conjecture-8.2-now-theorem-5.7" class="nav-link" data-scroll-target="#resolution-and-proof-of-conjecture-8.2-now-theorem-5.7"><span class="header-section-number">7.6.2</span> Resolution and Proof of Conjecture 8.2 (Now Theorem 5.7)</a></li>
+  <li><a href="#geometric-ellipsoid-projection-interpretation" id="toc-geometric-ellipsoid-projection-interpretation" class="nav-link" data-scroll-target="#geometric-ellipsoid-projection-interpretation"><span class="header-section-number">7.6.3</span> Geometric “Ellipsoid Projection” Interpretation</a></li>
+  </ul></li>
+  <li><a href="#case-7-numerical-implementation-and-validation" id="toc-case-7-numerical-implementation-and-validation" class="nav-link" data-scroll-target="#case-7-numerical-implementation-and-validation"><span class="header-section-number">7.7</span> Case 7: Numerical Implementation and Validation</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.8</span> Summary</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -206,12 +211,32 @@ window.Quarto = {
 <p><strong>Keywords</strong>: Tie probability, discrete distribution, Local Limit Theorem, Diophantine equations, saddle-point method, Laplace’s method, collision lattice, asymptotic analysis.</p>
 <hr>
 </section>
-<section id="the-coin-game-a-progressive-pedagogical-walkthrough" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> The Coin Game: A Progressive Pedagogical Walkthrough</h1>
+<section id="mathematical-notation-and-asymptotic-guide" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Mathematical Notation and Asymptotic Guide</h1>
+<p>To maintain mathematical rigor and ensure clarity for advanced undergraduate students, we define here the standard asymptotic notation used throughout this manuscript:</p>
+<ul>
+<li><strong>Asymptotic Equivalence (<span class="math inline">\(\sim\)</span>)</strong>: We write <span class="math inline">\(f(R) \sim g(R)\)</span> as <span class="math inline">\(R \to \infty\)</span> to denote that the ratio of the two functions approaches <span class="math inline">\(1\)</span>: <span class="math display">\[
+\lim_{R \to \infty} \frac{f(R)}{g(R)} = 1.
+\]</span></li>
+<li><strong>Big-O Notation (<span class="math inline">\(O\)</span>)</strong>: We write <span class="math inline">\(f(R) = O(g(R))\)</span> as <span class="math inline">\(R \to \infty\)</span> if there exist positive constants <span class="math inline">\(M\)</span> and <span class="math inline">\(R_0\)</span> such that: <span class="math display">\[
+|f(R)| \le M |g(R)| \qquad \text{for all } R \ge R_0.
+\]</span></li>
+<li><strong>Little-o Notation (<span class="math inline">\(o\)</span>)</strong>: We write <span class="math inline">\(f(R) = o(g(R))\)</span> as <span class="math inline">\(R \to \infty\)</span> to denote that <span class="math inline">\(f(R)\)</span> grows much slower than <span class="math inline">\(g(R)\)</span>: <span class="math display">\[
+\lim_{R \to \infty} \frac{f(R)}{g(R)} = 0.
+\]</span></li>
+<li><strong>Big-Theta Notation (<span class="math inline">\(\Theta\)</span>)</strong>: We write <span class="math inline">\(f(R) = \Theta(g(R))\)</span> as <span class="math inline">\(R \to \infty\)</span> if <span class="math inline">\(f(R)\)</span> is bounded both above and below by <span class="math inline">\(g(R)\)</span> asymptotically; that is, if <span class="math inline">\(f(R) = O(g(R))\)</span> and <span class="math inline">\(g(R) = O(f(R))\)</span>. This means there exist positive constants <span class="math inline">\(M_1\)</span>, <span class="math inline">\(M_2\)</span>, and <span class="math inline">\(R_0\)</span> such that: <span class="math display">\[
+M_1 |g(R)| \le |f(R)| \le M_2 |g(R)| \qquad \text{for all } R \ge R_0.
+\]</span></li>
+</ul>
+<p>Throughout this paper, <span class="math inline">\(R\)</span> represents the number of trials, <span class="math inline">\(P_{\text{tie}}(R)\)</span> denotes the exact tie probability, and <span class="math inline">\(d\)</span> represents the maximal lattice span of a discrete distribution.</p>
+<hr>
+</section>
+<section id="the-coin-game-a-progressive-pedagogical-walkthrough" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> The Coin Game: A Progressive Pedagogical Walkthrough</h1>
 <p>Two players each flip a coin <span class="math inline">\(R\)</span> times and compute the sample average of their results (assigning heads <span class="math inline">\(= 1\)</span> and tails <span class="math inline">\(= 0\)</span>). What is the probability <span class="math inline">\(P_{\text{tie}}(R)\)</span> that their averages come out exactly equal? Here, <span class="math inline">\(R_1\)</span> represents the number of rolls for Player 1 and <span class="math inline">\(R_2\)</span> represents the number of rolls for Player 2. In this section, we assume both players roll the same number of times, so <span class="math inline">\(R_1 = R_2 = R\)</span>.</p>
 <p>Since both players roll the same number of times <span class="math inline">\(R\)</span>, comparing sample averages is identical to comparing the number of heads each player got. In this section, we go through all aspects of the coin problem, starting with the basic overall formula and increasing complexity step-by-step to show students how discrete probability, combinatorics, and special functions intertwine.</p>
-<section id="basic-overall-formula-derivation" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="basic-overall-formula-derivation"><span class="header-section-number">2.1</span> Basic Overall Formula Derivation</h2>
+<section id="basic-overall-formula-derivation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="basic-overall-formula-derivation"><span class="header-section-number">3.1</span> Basic Overall Formula Derivation</h2>
 <p>Let Player 1 flip a coin with success probability <span class="math inline">\(p_1\)</span> and Player 2 flip a coin with success probability <span class="math inline">\(p_2\)</span>. After <span class="math inline">\(R\)</span> independent tosses, let <span class="math inline">\(k_1\)</span> and <span class="math inline">\(k_2\)</span> be their respective head counts. The probability that Player 1 gets exactly <span class="math inline">\(k\)</span> heads is: <span class="math display">\[
 P_1(k) = \binom{R}{k} p_1^k (1-p_1)^{R-k}.
 \]</span> Similarly, the probability that Player 2 gets exactly <span class="math inline">\(k\)</span> heads is: <span class="math display">\[
@@ -221,8 +246,8 @@ P_2(k) = \binom{R}{k} p_2^k (1-p_2)^{R-k}.
 P_{\text{tie}}(R) = \sum_{k=0}^{R} \binom{R}{k}^2 (p_1 p_2)^k \left[ (1-p_1)(1-p_2) \right]^{R-k}.
 \]</span></p>
 </section>
-<section id="case-1-the-fair-coin-p_1-p_2-12" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="case-1-the-fair-coin-p_1-p_2-12"><span class="header-section-number">2.2</span> Case 1: The Fair Coin (<span class="math inline">\(p_1 = p_2 = 1/2\)</span>)</h2>
+<section id="case-1-the-fair-coin-p_1-p_2-12" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="case-1-the-fair-coin-p_1-p_2-12"><span class="header-section-number">3.2</span> Case 1: The Fair Coin (<span class="math inline">\(p_1 = p_2 = 1/2\)</span>)</h2>
 <p>We begin with the simplest scenario: both players use fair coins. Setting <span class="math inline">\(p_1 = p_2 = 1/2\)</span> in the overall formula: <span class="math display">\[
 (p_1 p_2)^k \left[ (1-p_1)(1-p_2) \right]^{R-k} = \left(\frac{1}{4}\right)^k \left(\frac{1}{4}\right)^{R-k} = 4^{-R}.
 \]</span> Since <span class="math inline">\(4^{-R}\)</span> is independent of <span class="math inline">\(k\)</span>, it factors out of the sum, yielding: <span class="math display">\[
@@ -234,8 +259,8 @@ P_{\text{tie}}(R) = 4^{-R} \sum_{k=0}^{R} \binom{R}{k}^2.
 \]</span> Substituting this back yields the exact, closed-form baseline: <span class="math display">\[
 P_{\text{tie}}(R) = 4^{-R}\binom{2R}{R}.
 \]</span></p>
-<section id="large-r-asymptotic-approximation" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="large-r-asymptotic-approximation"><span class="header-section-number">2.2.1</span> Large-<span class="math inline">\(R\)</span> Asymptotic Approximation</h3>
+<section id="large-r-asymptotic-approximation" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="large-r-asymptotic-approximation"><span class="header-section-number">3.2.1</span> Large-<span class="math inline">\(R\)</span> Asymptotic Approximation</h3>
 <p>Computing <span class="math inline">\(\binom{2R}{R}\)</span> directly gets unwieldy for large <span class="math inline">\(R\)</span>, so we apply <strong>Stirling’s approximation</strong>, <span class="math inline">\(n! \approx \sqrt{2\pi n}\,(n/e)^n\)</span>, to both factorials in the binomial coefficient <span class="math inline">\(\binom{2R}{R} = \frac{(2R)!}{(R!)^2}\)</span>: <span class="math display">\[
 (2R)! \approx \sqrt{4\pi R}\,\frac{(2R)^{2R}}{e^{2R}}, \qquad
 (R!)^2 \approx 2\pi R\,\frac{R^{2R}}{e^{2R}}.
@@ -245,8 +270,8 @@ P_{\text{tie}}(R) = 4^{-R}\binom{2R}{R}.
 P_{\text{tie}}(R) \sim \frac{1}{\sqrt{\pi R}}.
 \]</span></p>
 </section>
-<section id="analytical-justification-of-the-sqrtpi-prefactor" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="analytical-justification-of-the-sqrtpi-prefactor"><span class="header-section-number">2.2.2</span> Analytical Justification of the <span class="math inline">\(\sqrt{\pi}\)</span> Prefactor</h3>
+<section id="analytical-justification-of-the-sqrtpi-prefactor" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="analytical-justification-of-the-sqrtpi-prefactor"><span class="header-section-number">3.2.2</span> Analytical Justification of the <span class="math inline">\(\sqrt{\pi}\)</span> Prefactor</h3>
 <p>To understand the origin of the <span class="math inline">\(\sqrt{\pi}\)</span> term rigorously, we apply the <strong>de Moivre-Laplace Local Limit Theorem (LLT)</strong>. Let <span class="math inline">\(S_R = \sum_{i=1}^R X_i\)</span> be the number of heads, which has mean <span class="math inline">\(\mu_R = R/2\)</span> and variance <span class="math inline">\(R \sigma^2 = R/4\)</span>. The LLT states that: <span class="math display">\[
 \Pr(S_R = k) = \frac{1}{\sqrt{2\pi R \sigma^2}} e^{-\frac{(k - R/2)^2}{2R\sigma^2}} + o\left(\frac{1}{\sqrt{R}}\right).
 \]</span> Since the support of <span class="math inline">\(S_R\)</span> consists of integers with lattice spacing <span class="math inline">\(d = 1\)</span>, we can approximate the sum of squared probabilities as a Riemann sum. Let <span class="math inline">\(\Delta x = \frac{1}{\sqrt{R\sigma^2}}\)</span> and <span class="math inline">\(x_k = \frac{k - R/2}{\sqrt{R\sigma^2}}\)</span>. Then: <span class="math display">\[
@@ -260,8 +285,8 @@ P_{\text{tie}}(R) \sim \frac{\sqrt{\pi}}{2\pi \sqrt{R \sigma^2}} = \frac{1}{2 \s
 \]</span> This formalizes the “collision probability” heuristic: the <span class="math inline">\(\sqrt{\pi}\)</span> is the normalization constant of the Gaussian distribution, arising directly from integrating the squared density over a 1D lattice.</p>
 </section>
 </section>
-<section id="case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12"><span class="header-section-number">2.3</span> Case 2: Matched but Unfair Coins (<span class="math inline">\(p_1 = p_2 = p \neq 1/2\)</span>)</h2>
+<section id="case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="case-2-matched-but-unfair-coins-p_1-p_2-p-neq-12"><span class="header-section-number">3.3</span> Case 2: Matched but Unfair Coins (<span class="math inline">\(p_1 = p_2 = p \neq 1/2\)</span>)</h2>
 <p>Now, we introduce a layer of complexity: the players use identical coins, but the coins are biased, meaning <span class="math inline">\(p_1 = p_2 = p \neq 1/2\)</span>. Setting <span class="math inline">\(p_1 = p_2 = p\)</span> in our overall formula: <span class="math display">\[
 P_{\text{tie}}(R) = \sum_{k=0}^{R} \binom{R}{k}^2 (p^2)^k \left[ (1-p)^2 \right]^{R-k}.
 \]</span> Why does the Vandermonde shortcut fail here? In the fair coin case, the probability term <span class="math inline">\((p^2)^k [(1-p)^2]^{R-k}\)</span> collapsed into a constant <span class="math inline">\((1/4)^R\)</span> that factored out because <span class="math inline">\(p^2 = (1-p)^2\)</span>. However, if <span class="math inline">\(p \neq 1/2\)</span>, then <span class="math inline">\(p^2 \neq (1-p)^2\)</span>, which prevents factoring out.</p>
@@ -271,11 +296,11 @@ P_{\text{tie}}(R) = (2p - 1)^R P_R\left( \frac{1 - 2p + 2p^2}{2p - 1} \right).
 \]</span></p>
 <p><em>(Note: Although <span class="math inline">\(2p-1 \to 0\)</span> as <span class="math inline">\(p \to 1/2\)</span>, the singularity is entirely removable, as proven in Case 3 below, recovering the fair-coin baseline).</em></p>
 </section>
-<section id="case-3-general-asymmetric-coins-p_1-neq-p_2" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="case-3-general-asymmetric-coins-p_1-neq-p_2"><span class="header-section-number">2.4</span> Case 3: General Asymmetric Coins (<span class="math inline">\(p_1 \neq p_2\)</span>)</h2>
+<section id="case-3-general-asymmetric-coins-p_1-neq-p_2" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="case-3-general-asymmetric-coins-p_1-neq-p_2"><span class="header-section-number">3.4</span> Case 3: General Asymmetric Coins (<span class="math inline">\(p_1 \neq p_2\)</span>)</h2>
 <p>Finally, we reach the most general case where the coins are unequal: <span class="math inline">\(p_1 \neq p_2\)</span>. Here, the tie probability decays <strong>exponentially</strong> because the two binomial distributions are centered at different expectations <span class="math inline">\(R p_1\)</span> and <span class="math inline">\(R p_2\)</span>, meaning their overlap is restricted to the tail regions.</p>
-<section id="exact-analytical-asymptotic-formula-via-laplaces-method" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="exact-analytical-asymptotic-formula-via-laplaces-method"><span class="header-section-number">2.4.1</span> Exact Analytical Asymptotic Formula via Laplace’s Method</h3>
+<section id="exact-analytical-asymptotic-formula-via-laplaces-method" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="exact-analytical-asymptotic-formula-via-laplaces-method"><span class="header-section-number">3.4.1</span> Exact Analytical Asymptotic Formula via Laplace’s Method</h3>
 <p>We can derive the exact analytical asymptotic formula including both the exponential rate and the polynomial prefactor using Laplace’s method for sums.</p>
 <p><strong>Theorem 1.3.</strong> <em>Let <span class="math inline">\(p_1 \neq p_2\)</span>. Define the positive constants:</em> <span class="math display">\[
 A = \sqrt{p_1 p_2}, \qquad B = \sqrt{(1-p_1)(1-p_2)}.
@@ -305,8 +330,8 @@ P_{\text{tie}}(R) \sim \frac{(A+B)^{2R}}{2\sqrt{\pi R} \frac{\sqrt{AB}}{A+B}} = 
 \]</span></p>
 <p>The exponential decay factor is <span class="math inline">\((A+B)^{2R} = \left(\sqrt{p_1 p_2} + \sqrt{(1-p_1)(1-p_2)}\right)^{2R}\)</span>. Since <span class="math inline">\(\sqrt{p_1 p_2} + \sqrt{(1-p_1)(1-p_2)} &lt; 1\)</span> for all <span class="math inline">\(p_1 \neq p_2\)</span>, this proves the exponential decay rate rigorously, while providing the exact polynomial prefactor <span class="math inline">\(\Theta(R^{-1/2})\)</span>.</p>
 </section>
-<section id="connection-to-classical-special-functions" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="connection-to-classical-special-functions"><span class="header-section-number">2.4.2</span> Connection to Classical Special Functions</h3>
+<section id="connection-to-classical-special-functions" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="connection-to-classical-special-functions"><span class="header-section-number">3.4.2</span> Connection to Classical Special Functions</h3>
 <p>Using the classical transformation identity between Gauss’s hypergeometric function <span class="math inline">\(_2F_1\)</span> and <strong>Legendre Polynomials</strong> <span class="math inline">\(P_R(x)\)</span>: <span class="math display">\[
 _2F_1(-R, -R; 1; z) = (1-z)^R P_R\left( \frac{1+z}{1-z} \right),
 \]</span> we substitute <span class="math inline">\(z = \frac{p_1 p_2}{(1-p_1)(1-p_2)}\)</span> into the hypergeometric representation to obtain the general closed form:</p>
@@ -314,13 +339,26 @@ _2F_1(-R, -R; 1; z) = (1-z)^R P_R\left( \frac{1+z}{1-z} \right),
 P_{\text{tie}}(R) = (p_1 + p_2 - 1)^R P_R\left( \frac{1 - p_1 - p_2 + 2 p_1 p_2}{p_1 + p_2 - 1} \right).
 \]</span></p>
 </section>
-<section id="proof-of-removability-at-complementarity-p_1-p_2-1" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="proof-of-removability-at-complementarity-p_1-p_2-1"><span class="header-section-number">2.4.3</span> Proof of Removability at Complementarity (<span class="math inline">\(p_1 + p_2 = 1\)</span>)</h3>
+<section id="proof-of-removability-at-complementarity-p_1-p_2-1" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="proof-of-removability-at-complementarity-p_1-p_2-1"><span class="header-section-number">3.4.3</span> Proof of Removability at Complementarity (<span class="math inline">\(p_1 + p_2 = 1\)</span>)</h3>
 <p>Let <span class="math inline">\(u = p_1 + p_2 - 1\)</span>. The complementary condition is <span class="math inline">\(u = 0\)</span>. For <span class="math inline">\(u \neq 0\)</span>, the Legendre representation is: <span class="math display">\[
 P_{\text{tie}}(R) = u^R P_R\left( \frac{1 - p_1 - p_2 + 2p_1p_2}{u} \right) = u^R P_R\left( \frac{2p_1p_2 - u}{u} \right).
-\]</span> We recall that the Legendre Polynomial <span class="math inline">\(P_R(x)\)</span> of degree <span class="math inline">\(R\)</span> has the explicit hypergeometric expansion: <span class="math display">\[
+\]</span> We can prove that the singularity at <span class="math inline">\(u = 0\)</span> is removable and find its limit using two complementary methods: a direct algebraic expansion and an asymptotic limit analysis based on the leading-order behavior of Legendre Polynomials.</p>
+<section id="method-1-asymptotic-limit-via-leading-legendre-terms" class="level4" data-number="3.4.3.1">
+<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="method-1-asymptotic-limit-via-leading-legendre-terms"><span class="header-section-number">3.4.3.1</span> Method 1: Asymptotic Limit via Leading Legendre Terms</h4>
+<p>We recall that as the argument <span class="math inline">\(x \to \pm\infty\)</span>, the Legendre Polynomial <span class="math inline">\(P_R(x)\)</span> of degree <span class="math inline">\(R\)</span> is dominated by its leading-order term: <span class="math display">\[
+P_R(x) \sim \frac{1}{2^R} \binom{2R}{R} x^R.
+\]</span> Under the complementarity condition, as the perturbation <span class="math inline">\(u = p_1+p_2-1 \to 0\)</span>, the argument <span class="math inline">\(x = \frac{2p_1p_2 - u}{u}\)</span> grows without bound (<span class="math inline">\(x \to \pm\infty\)</span>). Substituting this asymptotic behavior: <span class="math display">\[
+P_R\left( \frac{2p_1p_2 - u}{u} \right) \sim \frac{1}{2^R} \binom{2R}{R} \left( \frac{2p_1p_2 - u}{u} \right)^R \sim \frac{1}{2^R} \binom{2R}{R} \frac{2^R (p_1 p_2)^R}{u^R} = \binom{2R}{R} \frac{(p_1 p_2)^R}{u^R}.
+\]</span> Taking the limit as <span class="math inline">\(u \to 0\)</span> of the full expression: <span class="math display">\[
+\lim_{u \to 0} u^R P_R\left( \frac{2p_1p_2 - u}{u} \right) = \lim_{u \to 0} u^R \left[ \binom{2R}{R} \frac{(p_1 p_2)^R}{u^R} \right] = \binom{2R}{R} (p_1 p_2)^R.
+\]</span> Since <span class="math inline">\(p_1 + p_2 = 1 \implies p_2 = 1 - p_1\)</span>, this limits to <span class="math inline">\([p_1(1-p_1)]^R \binom{2R}{R}\)</span>, recovering the Vandermonde-collapsed baseline exactly.</p>
+</section>
+<section id="method-2-exact-algebraic-cancellation" class="level4" data-number="3.4.3.2">
+<h4 data-number="3.4.3.2" class="anchored" data-anchor-id="method-2-exact-algebraic-cancellation"><span class="header-section-number">3.4.3.2</span> Method 2: Exact Algebraic Cancellation</h4>
+<p>To verify that this holds exactly for all <span class="math inline">\(u \neq 0\)</span> (and not just in the limit), we expand the Legendre Polynomial <span class="math inline">\(P_R(x)\)</span> explicitly: <span class="math display">\[
 P_R(x) = \frac{1}{2^R} \sum_{j=0}^{R} \binom{R}{j}^2 (x-1)^{R-j} (x+1)^j.
-\]</span> Substituting <span class="math inline">\(x = \frac{2p_1p_2 - u}{u}\)</span> into the expansion: <span class="math display">\[
+\]</span> Substituting <span class="math inline">\(x = \frac{2p_1p_2 - u}{u}\)</span> into the terms: <span class="math display">\[
 x - 1 = \frac{2p_1p_2 - 2u}{u} = \frac{2(p_1p_2 - (p_1+p_2-1))}{u} = \frac{2(1-p_1)(1-p_2)}{u},
 \]</span> <span class="math display">\[
 x + 1 = \frac{2p_1p_2}{u}.
@@ -330,13 +368,14 @@ P_R\left( \frac{2p_1p_2 - u}{u} \right) = \frac{1}{2^R} \sum_{j=0}^{R} \binom{R}
 = \frac{1}{2^R} \sum_{j=0}^{R} \binom{R}{j}^2 2^R \left( (1-p_1)(1-p_2) \right)^{R-j} (p_1p_2)^j u^{-R}
 \]</span> <span class="math display">\[
 = u^{-R} \sum_{j=0}^{R} \binom{R}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{R-j}.
-\]</span> Multiplying by <span class="math inline">\(u^R\)</span>, the <span class="math inline">\(u^{-R}\)</span> cancels out completely: <span class="math display">\[
+\]</span> Multiplying by <span class="math inline">\(u^R\)</span>, the <span class="math inline">\(u^{-R}\)</span> cancels out completely, showing that for all <span class="math inline">\(u \neq 0\)</span>: <span class="math display">\[
 u^R P_R\left( \frac{2p_1p_2 - u}{u} \right) = \sum_{j=0}^{R} \binom{R}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{R-j} = P_{\text{tie}}(R).
 \]</span> This proves that the singularity at <span class="math inline">\(p_1 + p_2 = 1\)</span> is indeed <strong>removable</strong>, and the limit as <span class="math inline">\(u \to 0\)</span> converges exactly to the Vandermonde-collapsed baseline <span class="math inline">\([p_1(1-p_1)]^R \binom{2R}{R}\)</span>. This holds for all complementary probability pairs, including the fair-coin case (<span class="math inline">\(p_1=p_2=1/2\)</span>). <span class="math inline">\(\blacksquare\)</span></p>
 </section>
 </section>
-<section id="visualizing-the-progressive-coin-game" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="visualizing-the-progressive-coin-game"><span class="header-section-number">2.5</span> Visualizing the Progressive Coin Game</h2>
+</section>
+<section id="visualizing-the-progressive-coin-game" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="visualizing-the-progressive-coin-game"><span class="header-section-number">3.5</span> Visualizing the Progressive Coin Game</h2>
 <p>The following three panels plot <span class="math inline">\(P_{\text{tie}}(R)\)</span> exactly using the binomial formulations derived above, illustrating the transition from polynomial decay to exponential decay as probability parameters shift.</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
@@ -493,8 +532,8 @@ window.addEventListener('DOMContentLoaded', function() {
   <div style="width: 100%; height: 260px;"><canvas id="s5ChartB"></canvas></div>
   <div style="width: 100%; height: 260px;"><canvas id="s5ChartC"></canvas></div>
 </div>
-<section id="interpretation-of-the-charts" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="interpretation-of-the-charts"><span class="header-section-number">2.5.1</span> Interpretation of the Charts</h3>
+<section id="interpretation-of-the-charts" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="interpretation-of-the-charts"><span class="header-section-number">3.5.1</span> Interpretation of the Charts</h3>
 <ul>
 <li><strong>Panel A: Symmetric Cases (<span class="math inline">\(p_1 = p_2 = p\)</span>):</strong> As <span class="math inline">\(p\)</span> moves away from <span class="math inline">\(0.5\)</span>, the curves flatten out. While they all follow the polynomial decay rate <span class="math inline">\(\Theta(R^{-1/2})\)</span>, the constant prefactor is maximized at <span class="math inline">\(p = 0.5\)</span> because the variance <span class="math inline">\(\sigma^2 = p(1-p)\)</span> is maximized there, which minimizes the peak height and spreads the mass.</li>
 <li><strong>Panel B: Role of Complementarity (<span class="math inline">\(p_1 + p_2 = 1\)</span>):</strong> This panel demonstrates that complementary pairs (like <span class="math inline">\(0.3\)</span> and <span class="math inline">\(0.7\)</span>) yield a higher tie probability than matching non-complementary pairs (<span class="math inline">\(0.3\)</span> and <span class="math inline">\(0.3\)</span>). This is because the complementary condition aligns their distributions symmetrically, maximizing their overlap.</li>
@@ -504,10 +543,10 @@ window.addEventListener('DOMContentLoaded', function() {
 </section>
 </section>
 </section>
-<section id="affine-invariance-and-range-compatibility-in-the-binary-case" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Affine Invariance and Range Compatibility in the Binary Case</h1>
-<section id="affine-invariance-of-binary-distributions" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="affine-invariance-of-binary-distributions"><span class="header-section-number">3.1</span> Affine Invariance of Binary Distributions</h2>
+<section id="affine-invariance-and-range-compatibility-in-the-binary-case" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Affine Invariance and Range Compatibility in the Binary Case</h1>
+<section id="affine-invariance-of-binary-distributions" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="affine-invariance-of-binary-distributions"><span class="header-section-number">4.1</span> Affine Invariance of Binary Distributions</h2>
 <p>The Coin Game in Section 1 used values <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>. What if the two outcomes had been <span class="math inline">\(3\)</span> and <span class="math inline">\(47\)</span> instead, still each with probability <span class="math inline">\(p = 0.5\)</span>? Intuition says this shouldn’t change anything about the tie probability.</p>
 <p><strong>Theorem 2.1.</strong> <em>For any two-valued distribution with outcomes <span class="math inline">\(v_0, v_1\)</span> and success probability <span class="math inline">\(P(v_1) = p\)</span>, the tie probability <span class="math inline">\(P_{\text{tie}}(R)\)</span> depends only on <span class="math inline">\(p\)</span> and <span class="math inline">\(R\)</span>, and is independent of <span class="math inline">\(v_0\)</span> and <span class="math inline">\(v_1\)</span>.</em></p>
 <p><em>Proof.</em> Let <span class="math inline">\(k\)</span> be the number of times a player rolls <span class="math inline">\(v_1\)</span> (out of <span class="math inline">\(R\)</span> rolls). That player’s average is: <span class="math display">\[
@@ -520,13 +559,13 @@ window.addEventListener('DOMContentLoaded', function() {
 \]</span> Two players achieve identical averages if and only if they achieve identical roll counts of <span class="math inline">\(v_1\)</span>. Since the roll count <span class="math inline">\(k_i\)</span> is distributed as <span class="math inline">\(\text{Binomial}(R, p)\)</span>, which is defined purely by <span class="math inline">\(p\)</span> and <span class="math inline">\(R\)</span>, we have: <span class="math display">\[
 P_{\text{tie}}(R) = \sum_{k=0}^{R}\left[\binom{R}{k}p^k(1-p)^{R-k}\right]^2.
 \]</span> This expression is identical to the coin-game formula, with no dependence on <span class="math inline">\(v_0\)</span> or <span class="math inline">\(v_1\)</span>. Swapping <span class="math inline">\(\{0,1\}\)</span> for <span class="math inline">\(\{3,47\}\)</span> changes <em>what</em> average is achieved on a tie, but not <em>how likely</em> a tie is to occur. <span class="math inline">\(\blacksquare\)</span></p>
-<section id="pedagogical-note" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="pedagogical-note"><span class="header-section-number">3.1.1</span> Pedagogical Note</h3>
+<section id="pedagogical-note" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="pedagogical-note"><span class="header-section-number">4.1.1</span> Pedagogical Note</h3>
 <p>This complete invariance is a special geometric property of two-valued sets: any two distinct points in <span class="math inline">\(\mathbb{R}\)</span> are trivially affinely related. This property will <strong>not</strong> carry over once we move to three or more distinct values per side (<span class="math inline">\(S \geq 3\)</span>), where the spacing between values breaks affine symmetry, nor does it carry over once the two players’ value-pairs differ from each other.</p>
 </section>
 </section>
-<section id="range-compatibility-and-linear-diophantine-equations" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="range-compatibility-and-linear-diophantine-equations"><span class="header-section-number">3.2</span> Range Compatibility and Linear Diophantine Equations</h2>
+<section id="range-compatibility-and-linear-diophantine-equations" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="range-compatibility-and-linear-diophantine-equations"><span class="header-section-number">4.2</span> Range Compatibility and Linear Diophantine Equations</h2>
 <p>We now ask what happens when the two players’ value-pairs genuinely differ: Player 1 rolls from <span class="math inline">\(\{v_0, v_1\}\)</span> and Player 2 rolls from <span class="math inline">\(\{w_0, w_1\}\)</span>, both integer-valued, both with the same success probability <span class="math inline">\(p\)</span> for their respective “1”-outcome, both rolling <span class="math inline">\(R\)</span> times.</p>
 <p>To study this, we assume without loss of generality that <span class="math inline">\(v_1 &gt; v_0\)</span> and <span class="math inline">\(w_1 &gt; w_0\)</span> (meaning both spreads are strictly positive), and define: <span class="math display">\[
 \Delta v = v_1-v_0 &gt; 0, \qquad \Delta w = w_1-w_0 &gt; 0, \qquad \delta = w_0-v_0, \qquad g = \gcd(\Delta v, \Delta w).
@@ -541,14 +580,14 @@ k_1 \Delta v - k_2 \Delta w = R\delta.
 <p><em>Proof.</em> Setting the two average expressions equal: <span class="math display">\[
 v_0 + \frac{k_1}{R}\Delta v = w_0 + \frac{k_2}{R}\Delta w \implies \frac{k_1\Delta v - k_2\Delta w}{R} = w_0 - v_0 = \delta.
 \]</span> Multiplying by <span class="math inline">\(R\)</span> yields the stated linear Diophantine equation. <span class="math inline">\(\blacksquare\)</span></p>
-<section id="structural-impossibility" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="structural-impossibility"><span class="header-section-number">3.2.1</span> Structural Impossibility</h3>
+<section id="structural-impossibility" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="structural-impossibility"><span class="header-section-number">4.2.1</span> Structural Impossibility</h3>
 <p><strong>Theorem 2.3.</strong> <em>Let <span class="math inline">\(g = \gcd(\Delta v, \Delta w)\)</span>. If <span class="math inline">\(g \nmid R\delta\)</span>, then <span class="math inline">\(P_{\text{tie}}(R) = 0\)</span> identically for all <span class="math inline">\(p \in (0,1)\)</span>.</em></p>
 <p><em>Proof.</em> By Bézout’s identity, the linear Diophantine equation <span class="math inline">\(k_1 \Delta v - k_2 \Delta w = R\delta\)</span> has integer solutions in <span class="math inline">\(\mathbb{Z}^2\)</span> if and only if <span class="math inline">\(g\)</span> divides the right-hand side <span class="math inline">\(R\delta\)</span>. If <span class="math inline">\(g \nmid R\delta\)</span>, then no integer solutions exist at all. Consequently, no solutions can exist in the restricted domain <span class="math inline">\([0, R]^2\)</span>, meaning the intersection <span class="math inline">\(A_1 \cap A_2\)</span> is empty, and <span class="math inline">\(P_{\text{tie}}(R) = 0\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
 <p>This introduces a purely structural, number-theoretic obstruction to ties: the tie probability can be forced to zero purely by the numbering of the ranges, independent of the probability <span class="math inline">\(p\)</span>.</p>
 </section>
-<section id="general-parametric-solution-family" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="general-parametric-solution-family"><span class="header-section-number">3.2.2</span> General Parametric Solution Family</h3>
+<section id="general-parametric-solution-family" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="general-parametric-solution-family"><span class="header-section-number">4.2.2</span> General Parametric Solution Family</h3>
 <p>When <span class="math inline">\(g \mid R\delta\)</span>, solutions exist in <span class="math inline">\(\mathbb{Z}^2\)</span>. We can characterize all such solutions and establish the exact bounds on the parameter <span class="math inline">\(t\)</span> arising from the box constraint <span class="math inline">\(0 \le k_1, k_2 \le R\)</span>.</p>
 <p><strong>Theorem 2.4.</strong> <em>Suppose <span class="math inline">\(g \mid R\delta\)</span>, and let <span class="math inline">\((k_1^{*}, k_2^{*})\)</span> be any particular integer solution to <span class="math inline">\(k_1\Delta v - k_2\Delta w = R\delta\)</span>. Then every integer solution has the form:</em> <span class="math display">\[
 k_1(t) = k_1^{*} + \frac{\Delta w}{g}\,t, \qquad k_2(t) = k_2^{*} + \frac{\Delta v}{g}\,t, \qquad t \in \mathbb{Z}.
@@ -559,8 +598,8 @@ t_{\max} = \min\left( \left\lfloor \frac{(R - k_1^*) g}{\Delta w} \right\rfloor,
 P_{\text{tie}}(R) = \sum_{t = t_{\min}}^{t_{\max}} \binom{R}{k_1(t)}p^{k_1(t)}(1-p)^{R-k_1(t)} \cdot \binom{R}{k_2(t)}p^{k_2(t)}(1-p)^{R-k_2(t)}.
 \]</span></p>
 </section>
-<section id="step-by-step-pedagogical-walkthrough" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="step-by-step-pedagogical-walkthrough"><span class="header-section-number">3.2.3</span> Step-by-Step Pedagogical Walkthrough</h3>
+<section id="step-by-step-pedagogical-walkthrough" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="step-by-step-pedagogical-walkthrough"><span class="header-section-number">4.2.3</span> Step-by-Step Pedagogical Walkthrough</h3>
 <p>Let Player 1 roll <span class="math inline">\(R = 2\)</span> times from <span class="math inline">\(V = \{0, 2\}\)</span>, and Player 2 roll <span class="math inline">\(R = 2\)</span> times from <span class="math inline">\(W = \{1, 5\}\)</span>. * <strong>Step 1: Compute spreads and offsets:</strong> <span class="math display">\[
   \Delta v = 2 - 0 = 2, \qquad \Delta w = 5 - 1 = 4, \qquad \delta = 1 - 0 = 1.
   \]</span> The greatest common divisor of the spreads is <span class="math inline">\(g = \gcd(2, 4) = 2\)</span>. * <strong>Step 2: Check divisibility:</strong> For <span class="math inline">\(R = 2\)</span>, the right-hand side of the Diophantine equation is <span class="math inline">\(R\delta = 2(1) = 2\)</span>. Since <span class="math inline">\(g = 2\)</span> divides <span class="math inline">\(R\delta = 2\)</span>, solutions exist! (Note: if <span class="math inline">\(R=1\)</span>, <span class="math inline">\(R\delta = 1\)</span>, and since <span class="math inline">\(2 \nmid 1\)</span>, a tie would be structurally impossible at <span class="math inline">\(R=1\)</span>). * <strong>Step 3: Solve the Diophantine equation:</strong> Our equation is <span class="math inline">\(2 k_1 - 4 k_2 = 2\)</span>. Dividing by <span class="math inline">\(g = 2\)</span> yields: <span class="math display">\[
@@ -576,11 +615,11 @@ P_{\text{tie}}(R) = \sum_{t = t_{\min}}^{t_{\max}} \binom{R}{k_1(t)}p^{k_1(t)}(1
 </section>
 </section>
 </section>
-<section id="the-3-sided-die-from-standard-to-mismatched-supports" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> The 3-Sided Die: From Standard to Mismatched Supports</h1>
+<section id="the-3-sided-die-from-standard-to-mismatched-supports" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> The 3-Sided Die: From Standard to Mismatched Supports</h1>
 <p>To build deep mathematical intuition before jumping to <span class="math inline">\(n\)</span>-sided systems, we carefully analyze the 3-sided die (<span class="math inline">\(S = 3\)</span>). This introduces non-binary combinatorics (trinomial coefficients) and demonstrates how the physical values of the sides begin to play a critical role, validating profound intuition regarding Kullback-Leibler (KL) distances and support shapes.</p>
-<section id="standard-case-general-trinomial-formula" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="standard-case-general-trinomial-formula"><span class="header-section-number">4.1</span> Standard Case: General Trinomial Formula</h2>
+<section id="standard-case-general-trinomial-formula" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="standard-case-general-trinomial-formula"><span class="header-section-number">5.1</span> Standard Case: General Trinomial Formula</h2>
 <p>We begin with the standard value set <span class="math inline">\(V = \{0, 1, 2\}\)</span>. Let Player 1 have roll probabilities <span class="math inline">\(\vec{p} = (p_1, p_2, p_3)\)</span> and Player 2 have probabilities <span class="math inline">\(\vec{q} = (q_1, q_2, q_3)\)</span>, where <span class="math inline">\(\sum p_i = \sum q_i = 1\)</span>. Let both players roll <span class="math inline">\(R\)</span> times.</p>
 <p>The probability of achieving a composition vector <span class="math inline">\(\vec{n} = (n_1, n_2, n_3)\)</span> (where <span class="math inline">\(n_i\)</span> represents the number of rolls of value <span class="math inline">\(v_i\)</span>) is given by the trinomial distribution: <span class="math display">\[
 \Pr(\vec{n}; \vec{p}) = \binom{R}{n_1, n_2, n_3} p_1^{n_1} p_2^{n_2} p_3^{n_3}, \qquad \sum_{i=1}^3 n_i = R.
@@ -592,8 +631,8 @@ c_{2,R}(s) = \sum_{\substack{\vec{m} \,:\, |\vec{m}|=R \\ m_2+2m_3=s}} \binom{R}
 P_{\text{tie}}(R) = \sum_{s=0}^{2R} c_{1,R}(s) \, c_{2,R}(s).
 \]</span></p>
 </section>
-<section id="case-1-the-fair-3-sided-die-p_i-q_i-13" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="case-1-the-fair-3-sided-die-p_i-q_i-13"><span class="header-section-number">4.2</span> Case 1: The Fair 3-Sided Die (<span class="math inline">\(p_i = q_i = 1/3\)</span>)</h2>
+<section id="case-1-the-fair-3-sided-die-p_i-q_i-13" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="case-1-the-fair-3-sided-die-p_i-q_i-13"><span class="header-section-number">5.2</span> Case 1: The Fair 3-Sided Die (<span class="math inline">\(p_i = q_i = 1/3\)</span>)</h2>
 <p>Assume both players use fair, standard 3-sided dice (<span class="math inline">\(p_i = q_i = 1/3\)</span>). The probability weights simplify to: <span class="math display">\[
 c_R(s) = 3^{-R} \sum_{\substack{\vec{n} \,:\, |\vec{n}|=R \\ n_2+2n_3=s}} \binom{R}{n_1, n_2, n_3}.
 \]</span> The sum represents the coefficient of <span class="math inline">\(y^s\)</span> in the expansion of <span class="math inline">\((1 + y + y^2)^R\)</span>. These are the classical <strong>trinomial coefficients</strong> <span class="math inline">\(\binom{R}{s}_2\)</span>. To derive the large-<span class="math inline">\(R\)</span> asymptotic behavior, we apply the Local Limit Theorem. The expected value of a single roll is <span class="math inline">\(\mu = (0+1+2)/3 = 1\)</span>, and the variance is: <span class="math display">\[
@@ -604,14 +643,14 @@ P_{\text{tie}}(R) = \sum_{s=0}^{2R} c_R(s)^2 \sim \frac{1}{\sqrt{4\pi R \sigma^2
 P_{\text{tie}}(R) \sim \frac{1}{\sqrt{4\pi R \frac{2}{3}}} = \sqrt{\frac{3}{8\pi R}} \approx \frac{0.34549}{\sqrt{R}}.
 \]</span> The fair 3-sided die decays polynomially as <span class="math inline">\(\Theta(R^{-1/2})\)</span>, identical to the coin but with a modified constant prefactor arising from the larger variance.</p>
 </section>
-<section id="case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13"><span class="header-section-number">4.3</span> Case 2: Matched but Unfair 3-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq (1/3, 1/3, 1/3)\)</span>)</h2>
+<section id="case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="case-2-matched-but-unfair-3-sided-die-vecp-vecq-neq-13-13-13"><span class="header-section-number">5.3</span> Case 2: Matched but Unfair 3-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq (1/3, 1/3, 1/3)\)</span>)</h2>
 <p>Now, both players use the same <em>biased</em> 3-sided die, meaning <span class="math inline">\(\vec{p} = \vec{q}\)</span>, but the probabilities are unequal (e.g., <span class="math inline">\((0.5, 0.3, 0.2)\)</span>). Because they share the exact same distribution, their expected values are identical (<span class="math inline">\(\mu_1 = \mu_2 = \mu = p_2 + 2p_3\)</span>), maximizing their overlap. By the Local Limit Theorem, the tie probability still decays polynomially as <span class="math inline">\(\Theta(R^{-1/2})\)</span>: <span class="math display">\[
 P_{\text{tie}}(R) \sim \frac{1}{\sqrt{4\pi R \sigma^2}}, \qquad \text{where } \sigma^2 = p_2 + 4p_3 - (p_2 + 2p_3)^2.
 \]</span> Since <span class="math inline">\(\vec{p}\)</span> is biased, the single-roll variance <span class="math inline">\(\sigma^2\)</span> is smaller than the fair-die variance <span class="math inline">\(2/3\)</span>, meaning the curve of <span class="math inline">\(P_{\text{tie}}(R)\)</span> will lie slightly below the fair baseline, but its overall polynomial decay rate remains <span class="math inline">\(R^{-1/2}\)</span>.</p>
 </section>
-<section id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq"><span class="header-section-number">4.4</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</h2>
+<section id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq"><span class="header-section-number">5.4</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</h2>
 <p>Let the players use unequal probability distributions on the standard support, so <span class="math inline">\(\vec{p} \neq \vec{q}\)</span>. This leads to different prior expectations <span class="math inline">\(\mu_1 \neq \mu_2\)</span>, causing the tie probability to decay <strong>exponentially</strong> because a tie requires both players’ sums to meet in a shared tail region.</p>
 <p>We can analyze this exponential rate as a constrained convex optimization over the empirical composition fractions <span class="math inline">\(\vec{x} = \vec{n}/R\)</span> and <span class="math inline">\(\vec{y} = \vec{m}/R\)</span>: <span class="math display">\[
 \min_{\vec{x}, \vec{y}} \sum_{i=1}^3 x_i \log\frac{x_i}{p_i} + \sum_{i=1}^3 y_i \log\frac{y_i}{q_i}
@@ -622,11 +661,11 @@ x_i^* = \frac{p_i e^{\lambda v_i}}{\sum_{j=1}^3 p_j e^{\lambda v_j}}, \qquad y_i
 \]</span> where the parameter <span class="math inline">\(\lambda\)</span> acts as an “inverse temperature” pulling the two distributions’ averages together. The exponential decay rate is exactly the joint KL divergence cost <span class="math inline">\(D_{\text{KL}}(\vec{x}^* \| \vec{p}) + D_{\text{KL}}(\vec{y}^* \| \vec{q})\)</span> evaluated at this saddle point.</p>
 <hr>
 </section>
-<section id="moving-beyond-standard-supports-why-the-side-values-matter" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="moving-beyond-standard-supports-why-the-side-values-matter"><span class="header-section-number">4.5</span> Moving Beyond Standard Supports: Why the Side Values Matter</h2>
+<section id="moving-beyond-standard-supports-why-the-side-values-matter" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="moving-beyond-standard-supports-why-the-side-values-matter"><span class="header-section-number">5.5</span> Moving Beyond Standard Supports: Why the Side Values Matter</h2>
 <p>In the two-sided binary case, we proved (Theorem 2.1) that any set of values is affinely equivalent, meaning the actual side values <span class="math inline">\(v_0, v_1\)</span> have zero effect on the tie probability. For <span class="math inline">\(S \ge 3\)</span>, this elegant property <strong>breaks down entirely</strong> because the internal spacing between values can be non-uniform, changing the structural symmetry of collisions.</p>
-<section id="the-breakdown-of-invariance" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="the-breakdown-of-invariance"><span class="header-section-number">4.5.1</span> The Breakdown of Invariance</h3>
+<section id="the-breakdown-of-invariance" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="the-breakdown-of-invariance"><span class="header-section-number">5.5.1</span> The Breakdown of Invariance</h3>
 <p>Consider two 3-sided sets: * <strong>Set A (Uniform):</strong> <span class="math inline">\(V_A = \{0, 1, 2\}\)</span>. The values are equally spaced. * <strong>Set B (Non-uniform):</strong> <span class="math inline">\(V_B = \{0, 2, 5\}\)</span>. The spacings are <span class="math inline">\(2 - 0 = 2\)</span> and <span class="math inline">\(5 - 2 = 3\)</span>.</p>
 <p>Let <span class="math inline">\(\vec{p} = (1/3, 1/3, 1/3)\)</span> and <span class="math inline">\(R = 2\)</span>. * For <strong>Set A</strong>, the sum <span class="math inline">\(s = n_2 + 2n_3\)</span> can take values in <span class="math inline">\([0, 4]\)</span>. Let’s examine the sum <span class="math inline">\(s = 2\)</span>. The compatible compositions are: - <span class="math inline">\((1, 0, 1) \implies \text{sum } 0(1) + 1(0) + 2(1) = 2\)</span>. - <span class="math inline">\((0, 2, 0) \implies \text{sum } 0(0) + 1(2) + 2(0) = 2\)</span>. This gives a collision weight of <span class="math inline">\(c_R(2) = 3^{-2} [ \binom{2}{1,0,1} + \binom{2}{0,2,0} ] = \frac{1}{9}[2 + 1] = \frac{3}{9}\)</span>. * For <strong>Set B</strong>, the sum is <span class="math inline">\(s' = 0n_1 + 2n_2 + 5n_3 = 2n_2 + 5n_3\)</span>. The achievable sums for <span class="math inline">\(R=2\)</span> are: - <span class="math inline">\((2, 0, 0) \implies \text{sum } 0\)</span>. - <span class="math inline">\((1, 1, 0) \implies \text{sum } 2\)</span>. - <span class="math inline">\((0, 2, 0) \implies \text{sum } 4\)</span>. - <span class="math inline">\((1, 0, 1) \implies \text{sum } 5\)</span>. - <span class="math inline">\((0, 1, 1) \implies \text{sum } 7\)</span>. - <span class="math inline">\((0, 0, 2) \implies \text{sum } 10\)</span>. Every achievable sum corresponds to a <strong>unique</strong> composition vector! There are <strong>zero</strong> collisions at <span class="math inline">\(R=2\)</span> for Set B, meaning <span class="math inline">\(c_R(s') \in \{1/9, 2/9\}\)</span> for all achievable <span class="math inline">\(s'\)</span>. Summing the squares: <span class="math display">\[
   P_{\text{tie}, B}(2) = \sum c_R(s')^2 = \left(\frac{1}{9}\right)^2 \times 3 + \left(\frac{2}{9}\right)^2 \times 3 = \frac{3 + 12}{81} = \frac{15}{81} \approx 0.1852.
@@ -636,15 +675,15 @@ x_i^* = \frac{p_i e^{\lambda v_i}}{\sum_{j=1}^3 p_j e^{\lambda v_j}}, \qquad y_i
 <hr>
 </section>
 </section>
-<section id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq"><span class="header-section-number">4.6</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</h2>
+<section id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq"><span class="header-section-number">5.6</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</h2>
 <p>Now, let Player 1 roll from <span class="math inline">\(V_1 = \{v_1, v_2, v_3\}\)</span> and Player 2 roll from <span class="math inline">\(V_2 = \{w_1, w_2, w_3\}\)</span>, while sharing the same prior probability distribution (e.g.&nbsp;<span class="math inline">\(p_i = q_i = 1/3\)</span>).</p>
 <p>Even though their probabilities match, because their supports differ, their prior expectations are unequal: <span class="math display">\[
 \mu_1 = \sum_{i=1}^3 p_i v_i \neq \mu_2 = \sum_{i=1}^3 p_i w_i.
 \]</span> This mismatch in expectation forces the tie probability to decay <strong>exponentially</strong>, illustrating that unequal values can drive exponential decay just as unequal probabilities do.</p>
 </section>
-<section id="case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">4.7</span> Case 5: The General Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</h2>
+<section id="case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="case-5-the-general-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">5.7</span> Case 5: The General Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</h2>
 <p>We now arrive at the most general 3-sided configuration, where both the supports and probabilities are completely mismatched.</p>
 <p>We formulate this as a general joint optimization problem over the empirical composition distributions <span class="math inline">\(\vec{x}\)</span> and <span class="math inline">\(\vec{y}\)</span>: <span class="math display">\[
 \min_{\vec{x}, \vec{y}} D_{\text{KL}}(\vec{x} \| \vec{p}) + D_{\text{KL}}(\vec{y} \| \vec{q}) \quad \text{subject to} \quad \sum x_i v_i = \sum y_i w_i = \mu.
@@ -653,8 +692,8 @@ x_i^* = \frac{p_i e^{\lambda v_i}}{\sum_{j=1}^3 p_j e^{\lambda v_j}}, \qquad y_i
 \]</span> where <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is the unique Lagrange multiplier that forces their expectations to align: <span class="math display">\[
 \sum_{i=1}^3 x_i^* v_i = \sum_{i=1}^3 y_i^* w_i = \mu.
 \]</span></p>
-<section id="proving-the-kl-and-support-distance-intuition" class="level3" data-number="4.7.1">
-<h3 data-number="4.7.1" class="anchored" data-anchor-id="proving-the-kl-and-support-distance-intuition"><span class="header-section-number">4.7.1</span> Proving the KL and Support Distance Intuition</h3>
+<section id="proving-the-kl-and-support-distance-intuition" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="proving-the-kl-and-support-distance-intuition"><span class="header-section-number">5.7.1</span> Proving the KL and Support Distance Intuition</h3>
 <p>We now state and prove a major mathematical theorem that validates the profound intuition: the further apart the two distributions are, both in terms of probabilities (<span class="math inline">\(P\)</span>) and supports (<span class="math inline">\(V\)</span>), the faster the tie probability decays.</p>
 <p><strong>Theorem 3.1 (Kullback-Leibler and Support Distance Theorem).</strong> <em>Let the minimum of the joint KL divergence subject to the expectation constraint be:</em> <span class="math display">\[
 I^* = \min_{\vec{x}, \vec{y}} \left[ D_{\text{KL}}(\vec{x} \| \vec{p}) + D_{\text{KL}}(\vec{y} \| \vec{q}) \right] \quad \text{subject to} \quad \sum_{i=1}^3 x_i v_i = \sum_{i=1}^3 y_i w_i = \mu.
@@ -669,15 +708,15 @@ I^* = \min_{\vec{x}, \vec{y}} \left[ D_{\text{KL}}(\vec{x} \| \vec{p}) + D_{\tex
 <hr>
 </section>
 </section>
-<section id="the-3-sided-collision-lattice-and-trades" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="the-3-sided-collision-lattice-and-trades"><span class="header-section-number">4.8</span> The 3-Sided Collision Lattice and Trades</h2>
+<section id="the-3-sided-collision-lattice-and-trades" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="the-3-sided-collision-lattice-and-trades"><span class="header-section-number">5.8</span> The 3-Sided Collision Lattice and Trades</h2>
 <p>To study collisions on standard and non-standard 3-sided supports, we analyze the collision lattice:</p>
 <p><strong>Definition 3.2.</strong> <em>For a 3-sided value set <span class="math inline">\(V = \{v_1, v_2, v_3\}\)</span>, the <strong>collision lattice</strong> <span class="math inline">\(L(V)\)</span> is:</em> <span class="math display">\[
 L(V) = \left\{\, \vec{d} \in \mathbb{Z}^3 \;:\; d_1 + d_2 + d_3 = 0, \ \ d_1 v_1 + d_2 v_2 + d_3 v_3 = 0 \,\right\;.
 \]</span></p>
 <p>By Proposition 6.3, since the values are not all equal, the rank of <span class="math inline">\(L(V)\)</span> is <span class="math inline">\(3-2 = 1\)</span>. Thus, there is a <strong>single</strong> generating direction of collisions, generated by some shortest vector $ec{d}^*$.</p>
-<section id="pedagogical-trade-walkthrough" class="level3" data-number="4.8.1">
-<h3 data-number="4.8.1" class="anchored" data-anchor-id="pedagogical-trade-walkthrough"><span class="header-section-number">4.8.1</span> Pedagogical Trade Walkthrough</h3>
+<section id="pedagogical-trade-walkthrough" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="pedagogical-trade-walkthrough"><span class="header-section-number">5.8.1</span> Pedagogical Trade Walkthrough</h3>
 <p>Let <span class="math inline">\(V = \{0, 1, 2\}\)</span>. The collision lattice <span class="math inline">\(L(V)\)</span> consists of vectors satisfying: <span class="math display">\[
 d_1 + d_2 + d_3 = 0, \qquad 0d_1 + 1d_2 + 2d_3 = 0.
 \]</span> From the second equation, <span class="math inline">\(d_2 = -2d_3\)</span>. Substituting this into the first equation: <span class="math display">\[
@@ -691,8 +730,8 @@ d_1 - 2d_3 + d_3 = 0 \implies d_1 = d_3.
 </section>
 </section>
 </section>
-<section id="unequal-toss-amounts-a-progressive-case-by-case-analysis" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Unequal Toss Amounts: A Progressive Case-by-Case Analysis</h1>
+<section id="unequal-toss-amounts-a-progressive-case-by-case-analysis" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Unequal Toss Amounts: A Progressive Case-by-Case Analysis</h1>
 <p>When Player 1 rolls <span class="math inline">\(R_1\)</span> times and Player 2 rolls <span class="math inline">\(R_2\)</span> times, comparing sample averages gets much harder. Indeed, as the user brilliantly observed, in many configurations <strong>ties are (almost) impossible</strong> because of severe number-theoretic constraints on achievable averages! Here, <span class="math inline">\(R_1\)</span> represents the number of rolls for Player 1 and <span class="math inline">\(R_2\)</span> represents the number of rolls for Player 2.</p>
 <p>Let Player 1 roll from support <span class="math inline">\(V_1\)</span> with counts <span class="math inline">\(S_1 = \sum n_i v_i\)</span> and Player 2 roll from support <span class="math inline">\(V_2\)</span> with counts <span class="math inline">\(S_2 = \sum m_i w_i\)</span>. A tie in sample averages occurs if and only if: <span class="math display">\[
 \frac{S_1}{R_1} = \frac{S_2}{R_2} \implies S_1 R_2 = S_2 R_1.
@@ -708,11 +747,11 @@ S_1 \left( \frac{R_2}{g} \right) = S_2 \left( \frac{R_1}{g} \right).
 \]</span></p>
 <p>We evaluate this behavior case-by-case, going from the coin to higher-sided dice to demonstrate the transition from complete impossibility to partial polynomial decay.</p>
 <hr>
-<section id="section-4.2-the-coin-game-with-unequal-tosses" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="section-4.2-the-coin-game-with-unequal-tosses"><span class="header-section-number">5.1</span> Section 4.2: The Coin Game with Unequal Tosses</h2>
+<section id="section-4.2-the-coin-game-with-unequal-tosses" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="section-4.2-the-coin-game-with-unequal-tosses"><span class="header-section-number">6.1</span> Section 4.2: The Coin Game with Unequal Tosses</h2>
 <p>Let both players roll fair coins on the standard support <span class="math inline">\(V = \{0, 1\}\)</span>. Setting <span class="math inline">\(g = \gcd(R_1, R_2)\)</span>, the possible averages are <span class="math inline">\(\mu = m/g\)</span>.</p>
-<section id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101"><span class="header-section-number">5.1.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</h3>
+<section id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101"><span class="header-section-number">6.1.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</h3>
 <p>By Theorem 4.1, because <span class="math inline">\(g=1\)</span>, the only possible tie averages must be <strong>integers</strong>. For standard coin values <span class="math inline">\(\{0, 1\}\)</span>, the only integers in the range of averages <span class="math inline">\([0, 1]\)</span> are <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>! * To get average <span class="math inline">\(0\)</span>: both players must roll all <span class="math inline">\(0\)</span>s (<span class="math inline">\(S_1 = 0, S_2 = 0\)</span>). * To get average <span class="math inline">\(1\)</span>: both players must roll all <span class="math inline">\(1\)</span>s (<span class="math inline">\(S_1 = R_1, S_2 = R_2\)</span>). No other tie states exist! This proves your incredible intuition: a tie is <strong>completely impossible</strong> unless they both get the same value for all rolls.</p>
 <p>The exact tie probability is: <span class="math display">\[
 P_{\text{tie}}(R_1, R_2) = p^{R_1+R_2} + (1-p)^{R_1+R_2}.
@@ -720,8 +759,8 @@ P_{\text{tie}}(R_1, R_2) = p^{R_1+R_2} + (1-p)^{R_1+R_2}.
 P_{\text{tie}}(100, 101) = 2^{-201} + 2^{-201} = 2^{-200} \approx 6.223 \times 10^{-61}.
 \]</span> This is practically zero, proving that coprime tosses completely eliminate interior tie states for the coin, forcing exponential decay of the tie probability.</p>
 </section>
-<section id="case-2-proportional-toss-counts-r_2-c-r_1" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="case-2-proportional-toss-counts-r_2-c-r_1"><span class="header-section-number">5.1.2</span> Case 2: Proportional Toss Counts (<span class="math inline">\(R_2 = c R_1\)</span>)</h3>
+<section id="case-2-proportional-toss-counts-r_2-c-r_1" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="case-2-proportional-toss-counts-r_2-c-r_1"><span class="header-section-number">6.1.2</span> Case 2: Proportional Toss Counts (<span class="math inline">\(R_2 = c R_1\)</span>)</h3>
 <p>If <span class="math inline">\(R_2 = c R_1\)</span> for a fixed rational constant <span class="math inline">\(c\)</span>, then <span class="math inline">\(g = \gcd(R_1, c R_1) = R_1\)</span>. The number of possible averages is <span class="math inline">\(R_1 + 1\)</span>, preventing exponential decay. By approximating the sum with a Gaussian integral, we can derive the polynomial decay rate:</p>
 <p><strong>Theorem 4.2.</strong> <em>If <span class="math inline">\(R_2 = c R_1\)</span> for a rational constant <span class="math inline">\(c\)</span>, then as <span class="math inline">\(R_1 \to \infty\)</span>, the tie probability decays polynomially as:</em> <span class="math display">\[
 P_{\text{tie}}(R_1, c R_1) \sim \sqrt{\frac{2}{\pi c (c+1) R_1}}.
@@ -729,11 +768,11 @@ P_{\text{tie}}(R_1, c R_1) \sim \sqrt{\frac{2}{\pi c (c+1) R_1}}.
 <hr>
 </section>
 </section>
-<section id="section-4.3-the-3-sided-die-with-unequal-tosses" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="section-4.3-the-3-sided-die-with-unequal-tosses"><span class="header-section-number">5.2</span> Section 4.3: The 3-Sided Die with Unequal Tosses</h2>
+<section id="section-4.3-the-3-sided-die-with-unequal-tosses" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="section-4.3-the-3-sided-die-with-unequal-tosses"><span class="header-section-number">6.2</span> Section 4.3: The 3-Sided Die with Unequal Tosses</h2>
 <p>Now we analyze a 3-sided die on <span class="math inline">\(V = \{0, 1, 2\}\)</span> with fair probabilities <span class="math inline">\(p_i \equiv 1/3\)</span>.</p>
-<section id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1"><span class="header-section-number">5.2.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</h3>
+<section id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="case-1-coprime-toss-counts-g-1-e.g.-r_1-100-r_2-101-1"><span class="header-section-number">6.2.1</span> Case 1: Coprime Toss Counts (<span class="math inline">\(g = 1\)</span>, e.g., <span class="math inline">\(R_1 = 100, R_2 = 101\)</span>)</h3>
 <p>By Theorem 4.1, because <span class="math inline">\(g=1\)</span>, the only possible averages are integers. The integers in the range <span class="math inline">\([0, 2]\)</span> are <span class="math inline">\(0, 1,\)</span> and <span class="math inline">\(2\)</span>. Unlike the coin game, we have an <strong>interior integer average</strong>, <span class="math inline">\(\mu = 1\)</span>! * <span class="math inline">\(\mu = 0 \implies\)</span> all rolls must be <span class="math inline">\(0\)</span>. Probability is <span class="math inline">\(3^{-(R_1+R_2)}\)</span>. * <span class="math inline">\(\mu = 2 \implies\)</span> all rolls must be <span class="math inline">\(2\)</span>. Probability is <span class="math inline">\(3^{-(R_1+R_2)}\)</span>. * <span class="math inline">\(\mu = 1 \implies\)</span> Players achieve a sum of exactly <span class="math inline">\(s_1 = R_1\)</span> and <span class="math inline">\(s_2 = R_2\)</span>. The exact coprime tie probability is: <span class="math display">\[
 P_{\text{tie}}(R_1, R_2) = 3^{-(R_1+R_2)} \left[ 2 + \binom{R_1}{R_1}_2 \binom{R_2}{R_2}_2 \right]
 \]</span> where <span class="math inline">\(\binom{R}{R}_2\)</span> is the central trinomial coefficient of <span class="math inline">\((1+y+y^2)^R\)</span>. While the <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\mu=2\)</span> terms are exponentially suppressed, the <span class="math inline">\(\mu=1\)</span> term is <strong>polynomially</strong> suppressed! Recall that for a 3-sided die, the single-roll variance is <span class="math inline">\(\sigma^2 = 2/3\)</span>. By the Local Limit Theorem: <span class="math display">\[
@@ -743,14 +782,14 @@ P_{\text{tie}}(R_1, R_2) \sim \frac{1}{2\pi \sigma^2 \sqrt{R_1 R_2}} = \frac{3}{
 \]</span></p>
 <p>Thus, for a 3-sided die on <span class="math inline">\(V = \{0, 1, 2\}\)</span>, if <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> are coprime, a tie is <strong>still possible</strong> and decays as <span class="math inline">\(\Theta(R^{-1})\)</span>! This is because the interior integer <span class="math inline">\(1\)</span> is inside the support and can be achieved in many ways.</p>
 </section>
-<section id="the-impact-of-non-uniform-supports" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="the-impact-of-non-uniform-supports"><span class="header-section-number">5.2.2</span> The Impact of Non-Uniform Supports</h3>
+<section id="the-impact-of-non-uniform-supports" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="the-impact-of-non-uniform-supports"><span class="header-section-number">6.2.2</span> The Impact of Non-Uniform Supports</h3>
 <p>What if the support is non-uniform, say <span class="math inline">\(V = \{0, 2, 5\}\)</span>? The range of averages is <span class="math inline">\([0, 5]\)</span>. The integers in the range are <span class="math inline">\(0, 1, 2, 3, 4, 5\)</span>. But are these integers achievable? Let <span class="math inline">\(R_1 = 100\)</span> and <span class="math inline">\(R_2 = 101\)</span>: * To achieve average <span class="math inline">\(\mu = 1\)</span>, we need <span class="math inline">\(2n_2 + 5n_3 = R_1 = 100\)</span> (achievable, e.g.&nbsp;<span class="math inline">\(n_2=50, n_3=0\)</span>) and <span class="math inline">\(2m_2 + 5m_3 = R_2 = 101\)</span>. Let’s check if <span class="math inline">\(2m_2 + 5m_3 = 101\)</span> is solvable in non-negative integers such that <span class="math inline">\(m_2 + m_3 \le 101\)</span>. Since <span class="math inline">\(101\)</span> is odd, <span class="math inline">\(m_3\)</span> must be odd. Let <span class="math inline">\(m_3 = 1\)</span>. Then <span class="math inline">\(2m_2 = 96 \implies m_2 = 48\)</span>. Since <span class="math inline">\(48 + 1 = 49 \le 101\)</span>, this is solvable! * What if the support is <span class="math inline">\(V = \{0, 3, 5\}\)</span>? To achieve average <span class="math inline">\(1\)</span>, we need <span class="math inline">\(3n_2 + 5n_3 = 100\)</span> and <span class="math inline">\(3m_2 + 5m_3 = 101\)</span>. For <span class="math inline">\(3n_2 + 5n_3 = 100\)</span>: let <span class="math inline">\(n_3 = 20 \implies n_2 = 0\)</span>. Solvable! For <span class="math inline">\(3m_2 + 5m_3 = 101\)</span>: let <span class="math inline">\(m_3 = 1 \implies 3m_2 = 96 \implies m_2 = 32\)</span>. Solvable! However, if we shift the support values such that the Diophantine equations have no non-negative integer solutions in <span class="math inline">\([0, R_1]\)</span> and <span class="math inline">\([0, R_2]\)</span>, then the tie probability for that average is <strong>strictly zero</strong>. For non-uniform supports, ties are driven to be almost impossible because most interior integer averages are blocked Diophantinely.</p>
 <hr>
 </section>
 </section>
-<section id="section-4.4-the-general-n-sided-die-with-unequal-tosses" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="section-4.4-the-general-n-sided-die-with-unequal-tosses"><span class="header-section-number">5.3</span> Section 4.4: The General <span class="math inline">\(n\)</span>-Sided Die with Unequal Tosses</h2>
+<section id="section-4.4-the-general-n-sided-die-with-unequal-tosses" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="section-4.4-the-general-n-sided-die-with-unequal-tosses"><span class="header-section-number">6.3</span> Section 4.4: The General <span class="math inline">\(n\)</span>-Sided Die with Unequal Tosses</h2>
 <p>We now generalize this behavior to arbitrary <span class="math inline">\(n\)</span>-sided systems with supports <span class="math inline">\(V_1, V_2\)</span> and probabilities $ec{p}, ec{q}$.</p>
 <p>Let <span class="math inline">\(g = \gcd(R_1, R_2)\)</span>. The set of shared tie averages is the intersection of the sets of achievable averages: <span class="math display">\[
 \mathcal{M} = \left\{\, \frac{m}{g} \in [v_{\min}, v_{\max}] \cap [w_{\min}, w_{\max}] \;:\; m \in \mathbb{Z} \,\right\}
@@ -758,8 +797,8 @@ P_{\text{tie}}(R_1, R_2) \sim \frac{1}{2\pi \sigma^2 \sqrt{R_1 R_2}} = \frac{3}{
 <hr>
 </section>
 </section>
-<section id="the-general-n-sided-case-slow-progressive-analytical-breakdown" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> The General <span class="math inline">\(n\)</span>-Sided Case: Slow, Progressive Analytical Breakdown</h1>
+<section id="the-general-n-sided-case-slow-progressive-analytical-breakdown" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> The General <span class="math inline">\(n\)</span>-Sided Case: Slow, Progressive Analytical Breakdown</h1>
 <p>We now generalize our mathematical machinery to arbitrary <span class="math inline">\(n\)</span>-sided systems (<span class="math inline">\(S = n\)</span>). To maintain deep structural symmetry and high undergraduate readability, we evaluate the general case step-by-step, building progressive complexity from fair uniform baselines to general mismatched supports and probabilities.</p>
 <p>The general tie probability formula is: <span class="math display">\[
 c_{1,R}(s) = \sum_{\substack{\vec{n} \,:\, |\vec{n}|=R \\ \sum n_i v_i = s}} \binom{R}{n_1, \dots, n_n} \prod_{i=1}^n p_i^{n_i}, \qquad
@@ -767,11 +806,15 @@ c_{2,R}(s) = \sum_{\substack{\vec{m} \,:\, |\vec{m}|=R \\ \sum m_i w_i = s}} \bi
 \]</span> <span class="math display">\[
 P_{\text{tie}}(R) = \sum_{s} c_{1,R}(s) \, c_{2,R}(s).
 \]</span></p>
-<section id="case-1-the-fair-n-sided-die-p_i-q_i-1n" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="case-1-the-fair-n-sided-die-p_i-q_i-1n"><span class="header-section-number">6.1</span> Case 1: The Fair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(p_i = q_i = 1/n\)</span>)</h2>
+<p>To study these sums and their limit distributions, we must be exceptionally precise about the lattice properties of the supports.</p>
+<p><strong>Definition 5.1 (Maximal Lattice Spacing / Span).</strong> <em>Let <span class="math inline">\(D\)</span> be a discrete random variable supported on a set of integers <span class="math inline">\(V = \{v_1, \dots, v_n\}\)</span> with <span class="math inline">\(v_1 &lt; v_2 &lt; \dots &lt; v_n\)</span>. The <strong>span</strong> <span class="math inline">\(d\)</span> (also called the maximal lattice spacing) of the distribution is defined as the greatest common divisor of the differences between consecutive support values:</em> <span class="math display">\[
+d = \gcd(v_2 - v_1, v_3 - v_2, \dots, v_n - v_{n-1}).
+\]</span> <em>A distribution on <span class="math inline">\(\mathbb{Z}\)</span> is said to be <strong>strongly <span class="math inline">\(d\)</span>-lattice</strong> if its support lies in a lattice of the form <span class="math inline">\(a + d\mathbb{Z}\)</span> and <span class="math inline">\(d\)</span> is the largest integer for which this holds. Importantly, the span of the sum of <span class="math inline">\(R\)</span> independent copies of <span class="math inline">\(D\)</span> is identical to the span of a single roll, <span class="math inline">\(d\)</span>, which justifies why the lattice step size in the Riemann sum remains <span class="math inline">\(d\)</span> for all <span class="math inline">\(R\)</span>.</em></p>
+<section id="case-1-the-fair-n-sided-die-p_i-q_i-1n" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="case-1-the-fair-n-sided-die-p_i-q_i-1n"><span class="header-section-number">7.1</span> Case 1: The Fair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(p_i = q_i = 1/n\)</span>)</h2>
 <p>We begin with the symmetric baseline: both players roll from the standard, uniformly spaced value set <span class="math inline">\(V = \{0, 1, \dots, n-1\}\)</span> with uniform probabilities <span class="math inline">\(p_i = 1/n\)</span>. The probability weights simplify to: <span class="math display">\[
 c_R(s) = n^{-R} \sum_{\substack{\vec{n} \,:\, |\vec{n}|=R \\ \sum n_i i = s}} \binom{R}{n_1, \dots, n_n}.
-\]</span> These sum weights correspond to the multinomial coefficients of <span class="math inline">\((1 + y + y^2 + \dots + y^{n-1})^R\)</span>. The maximal lattice span of <span class="math inline">\(V\)</span> is <span class="math inline">\(d = 1\)</span> (Definition 5.1). The mean is <span class="math inline">\(\mu = (n-1)/2\)</span>, and the variance of a single roll is: <span class="math display">\[
+\]</span> These sum weights correspond to the multinomial coefficients of <span class="math inline">\((1 + y + y^2 + \dots + y^{n-1})^R\)</span>. The maximal lattice span of <span class="math inline">\(V\)</span> is <span class="math inline">\(d = 1\)</span> (by Definition 5.1). The mean is <span class="math inline">\(\mu = (n-1)/2\)</span>, and the variance of a single roll is: <span class="math display">\[
 \sigma^2 = \frac{n^2 - 1}{12}.
 \]</span> Applying the lattice Local Limit Theorem, we can derive the exact polynomial asymptotic decay constant:</p>
 <p><strong>Theorem 5.1.</strong> <em>For two independent players rolling fair standard <span class="math inline">\(n\)</span>-sided dice (<span class="math inline">\(p_i \equiv 1/n\)</span>), the asymptotic tie probability is:</em> <span class="math display">\[
@@ -782,41 +825,61 @@ P_{\text{tie}}(R) \sim \frac{1}{\sqrt{4\pi R \sigma^2}} = \frac{1}{\sqrt{4\pi R 
 \]</span></p>
 <p><em>(Note: For <span class="math inline">\(n=2\)</span>, this yields <span class="math inline">\(\sqrt{3/3\pi R} = 1/\sqrt{\pi R}\)</span>, matching Case 1 of Section 1.2 exactly. For <span class="math inline">\(n=3\)</span>, it yields <span class="math inline">\(\sqrt{3/8\pi R}\)</span>, matching Case 1 of Section 3.2 exactly).</em></p>
 </section>
-<section id="case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n"><span class="header-section-number">6.2</span> Case 2: Matched but Unfair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq \vec{1}/n\)</span>)</h2>
+<section id="case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="case-2-matched-but-unfair-n-sided-die-vecp-vecq-neq-vec1n"><span class="header-section-number">7.2</span> Case 2: Matched but Unfair <span class="math inline">\(n\)</span>-Sided Die (<span class="math inline">\(\vec{p} = \vec{q} \neq \vec{1}/n\)</span>)</h2>
 <p>Now, both players use the same <em>biased</em> <span class="math inline">\(n\)</span>-sided die on standard support <span class="math inline">\(V = \{0, 1, \dots, n-1\}\)</span>, sharing the same probability vector <span class="math inline">\(\vec{p}\)</span>. Since they share the same distribution, their expected values are identical, maintaining maximum overlap. By the Local Limit Theorem, the tie probability still decays polynomially as <span class="math inline">\(\Theta(R^{-1/2})\)</span>, with the variance <span class="math inline">\(\sigma^2\)</span> determined by the prior distribution <span class="math inline">\(\vec{p}\)</span>: <span class="math display">\[
 P_{\text{tie}}(R) \sim \frac{1}{\sqrt{4\pi R \sigma^2}}, \qquad \sigma^2 = \sum_{i=1}^n p_i i^2 - \left( \sum_{i=1}^n p_i i \right)^2.
 \]</span></p>
 </section>
-<section id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1"><span class="header-section-number">6.3</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</h2>
+<section id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="case-3-asymmetric-probabilities-on-standard-support-vecp-neq-vecq-1"><span class="header-section-number">7.3</span> Case 3: Asymmetric Probabilities on Standard Support (<span class="math inline">\(\vec{p} \neq \vec{q}\)</span>)</h2>
 <p>Let the players use unequal probability distributions on standard support <span class="math inline">\(V = \{0, 1, \dots, n-1\}\)</span>. This drives different prior expectations, meaning the tie probability decays <strong>exponentially</strong>.</p>
 <p>We can model this using the joint convex optimization of empirical composition distributions $ec{x}$ and $ec{y}<span class="math inline">\(:\)</span>$ <em>{, } D</em>{}( | ) + D_{}( | ) <em>{i=1}^n x_i i = </em>{i=1}^n y_i i = . <span class="math display">\[
 Evaluating the Lagrangian stationary points proves that:
 \]</span> x_i^* = , y_i^* = $$ where <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is the unique Lagrange multiplier aligning their expectations. The exponential decay rate is the minimum joint KL divergence <span class="math inline">\(D_{\text{KL}}(\vec{x}^* \| \vec{p}) + D_{\text{KL}}(\vec{y}^* \| \vec{q})\)</span>.</p>
 </section>
-<section id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1"><span class="header-section-number">6.4</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</h2>
+<section id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="case-4-mismatched-values-with-matching-probabilities-v_1-neq-v_2-vecp-vecq-1"><span class="header-section-number">7.4</span> Case 4: Mismatched Values with Matching Probabilities (<span class="math inline">\(V_1 \neq V_2, \vec{p} = \vec{q}\)</span>)</h2>
 <p>Now, Player 1 rolls from <span class="math inline">\(V_1 = \{v_1, \dots, v_n\}\)</span> and Player 2 rolls from <span class="math inline">\(V_2 = \{w_1, \dots, w_n\}\)</span>, sharing the same prior probability vector <span class="math inline">\(\vec{p}\)</span>. Even though their probabilities match, because their supports differ, their prior expectations are unequal: <span class="math display">\[
 \mu_1 = \sum_{i=1}^n p_i v_i \neq \mu_2 = \sum_{i=1}^n p_i w_i.
 \]</span> This mismatch in physical supports shifts their expectations and forces the tie probability to decay <strong>exponentially</strong>, illustrating that support mismatches act as physical entropy barriers just as probability mismatches do.</p>
 </section>
-<section id="case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">6.5</span> Case 5: The General <span class="math inline">\(n\)</span>-Sided Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</h2>
+<section id="case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="case-5-the-general-n-sided-mismatched-case-v_1-neq-v_2-vecp-neq-vecq"><span class="header-section-number">7.5</span> Case 5: The General <span class="math inline">\(n\)</span>-Sided Mismatched Case (<span class="math inline">\(V_1 \neq V_2, \vec{p} \neq \vec{q}\)</span>)</h2>
 <p>Finally, we reach the most general <span class="math inline">\(n\)</span>-sided configuration, with complete support and probability asymmetry. The general joint optimization is: <span class="math display">\[
 I^* = \min_{\vec{x}, \vec{y}} D_{\text{KL}}(\vec{x} \| \vec{p}) + D_{\text{KL}}(\vec{y} \| \vec{q}) \quad \text{subject to} \quad \sum_{i=1}^n x_i v_i = \sum_{i=1}^n y_i w_i = \mu.
 \]</span> The optimal distributions are the generalized Gibbs (Boltzmann) distributions: <span class="math display">\[
 x_i^* = \frac{p_i e^{\lambda v_i}}{\sum_{j=1}^n p_j e^{\lambda v_j}}, \qquad y_i^* = \frac{q_i e^{-\lambda w_i}}{\sum_{j=1}^n q_j e^{-\lambda w_j}}
-\]</span> where <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is the unique Lagrange multiplier aligning their averages. By Theorem 3.1, the exponential decay rate is <span class="math inline">\(P_{\text{tie}}(R) = \Theta(e^{-I^* R})\)</span>. The greater the distance in probability shapes (<span class="math inline">\(P\)</span>) and physical ranges (<span class="math inline">\(V\)</span>), the larger the joint minimum KL cost <span class="math inline">\(D_{\text{KL}}(\vec{x}^* \| \vec{p}) + D_{\text{KL}}(\vec{y}^* \| \vec{q})\)</span> becomes, accelerating the exponential decay.</p>
+\]</span> where <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is the unique Lagrange multiplier aligning their averages.</p>
+<section id="variational-derivation-of-the-gibbsboltzmann-distribution" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="variational-derivation-of-the-gibbsboltzmann-distribution"><span class="header-section-number">7.5.1</span> Variational Derivation of the Gibbs/Boltzmann Distribution</h3>
+<p>To establish this general thermodynamic-probabilistic connection rigorously, we minimize the joint KL divergence subject to the constraints. We write the joint objective function as: <span class="math display">\[
+H(\vec{x}, \vec{y}) = D_{\text{KL}}(\vec{x} \| \vec{p}) + D_{\text{KL}}(\vec{y} \| \vec{q}) = \sum_{i=1}^n x_i \log\left(\frac{x_i}{p_i}\right) + \sum_{i=1}^n y_i \log\left(\frac{y_i}{q_i}\right).
+\]</span> We require <span class="math inline">\(\vec{x}\)</span> and <span class="math inline">\(\vec{y}\)</span> to be valid probability distributions on <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> respectively, meaning <span class="math inline">\(\sum_{i=1}^n x_i = 1\)</span> and <span class="math inline">\(\sum_{i=1}^n y_i = 1\)</span>. Furthermore, they must satisfy the matching expectation constraint: <span class="math display">\[
+\sum_{i=1}^n x_i v_i = \sum_{i=1}^n y_i w_i = \mu,
+\]</span> where <span class="math inline">\(\mu\)</span> is the shared target average. Using Lagrange multipliers <span class="math inline">\(\alpha_1\)</span>, <span class="math inline">\(\alpha_2\)</span>, and <span class="math inline">\(\lambda\)</span>, we formulate the Lagrangian function: <span class="math display">\[
+\mathcal{L}(\vec{x}, \vec{y}, \alpha_1, \alpha_2, \lambda) = \sum_{i=1}^n x_i \log\left(\frac{x_i}{p_i}\right) + \sum_{i=1}^n y_i \log\left(\frac{y_i}{q_i}\right) - \alpha_1 \left( \sum_{i=1}^n x_i - 1 \right) - \alpha_2 \left( \sum_{i=1}^n y_i - 1 \right) - \lambda \left( \sum_{i=1}^n x_i v_i - \sum_{i=1}^n y_i w_i \right).
+\]</span> To find the stationary points, we take the partial derivatives of <span class="math inline">\(\mathcal{L}\)</span> with respect to the empirical probabilities <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span> and set them to zero: <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial x_i} = \log\left(\frac{x_i}{p_i}\right) + 1 - \alpha_1 - \lambda v_i = 0 \implies x_i^* = p_i e^{\alpha_1 - 1} e^{\lambda v_i},
+\]</span> <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial y_i} = \log\left(\frac{y_i}{q_i}\right) + 1 - \alpha_2 + \lambda w_i = 0 \implies y_i^* = q_i e^{\alpha_2 - 1} e^{-\lambda w_i}.
+\]</span> To determine the normalization factors, we sum the empirical probabilities: <span class="math display">\[
+\sum_{i=1}^n x_i^* = e^{\alpha_1 - 1} \sum_{j=1}^n p_j e^{\lambda v_j} = 1 \implies e^{\alpha_1 - 1} = \frac{1}{\sum_{j=1}^n p_j e^{\lambda v_j}},
+\]</span> <span class="math display">\[
+\sum_{i=1}^n y_i^* = e^{\alpha_2 - 1} \sum_{j=1}^n q_j e^{-\lambda w_j} = 1 \implies e^{\alpha_2 - 1} = \frac{1}{\sum_{j=1}^n q_j e^{-\lambda w_j}}.
+\]</span> Substituting these expressions back yields the classical <strong>Gibbs/Boltzmann-like distributions</strong>: <span class="math display">\[
+x_i^* = \frac{p_i e^{\lambda v_i}}{\sum_{j=1}^n p_j e^{\lambda v_j}}, \qquad y_i^* = \frac{q_i e^{-\lambda w_i}}{\sum_{j=1}^n q_j e^{-\lambda w_j}}.
+\]</span> The parameter <span class="math inline">\(\lambda \in \mathbb{R}\)</span> is the unique Lagrange multiplier that forces their expectations to align: <span class="math display">\[
+\sum_{i=1}^n x_i^* v_i = \sum_{i=1}^n y_i^* w_i = \mu \implies \frac{\sum_{i=1}^n p_i v_i e^{\lambda v_i}}{\sum_{j=1}^n p_j e^{\lambda v_j}} = \frac{\sum_{i=1}^n q_i w_i e^{-\lambda w_i}}{\sum_{j=1}^n q_j e^{-\lambda w_j}} = \mu.
+\]</span> Since the expected value of a Gibbs distribution is strictly monotonic with respect to <span class="math inline">\(\lambda\)</span>, there is a unique <span class="math inline">\(\lambda\)</span> that solves this system for any target average <span class="math inline">\(\mu\)</span> lying within the intersection of the convex hulls of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span>.</p>
+<p>By Theorem 3.1, the exponential decay rate is <span class="math inline">\(P_{\text{tie}}(R) = \Theta(e^{-I^* R})\)</span>. The greater the distance in probability shapes (<span class="math inline">\(P\)</span>) and physical ranges (<span class="math inline">\(V\)</span>), the larger the joint minimum KL cost <span class="math inline">\(D_{\text{KL}}(\vec{x}^* \| \vec{p}) + D_{\text{KL}}(\vec{y}^* \| \vec{q})\)</span> becomes, accelerating the exponential decay.</p>
 <hr>
 </section>
-<section id="case-6-the-n-sided-collision-lattice-and-geometric-projections" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="case-6-the-n-sided-collision-lattice-and-geometric-projections"><span class="header-section-number">6.6</span> Case 6: The <span class="math inline">\(n\)</span>-Sided Collision Lattice and Geometric Projections</h2>
+</section>
+<section id="case-6-the-n-sided-collision-lattice-and-geometric-projections" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="case-6-the-n-sided-collision-lattice-and-geometric-projections"><span class="header-section-number">7.6</span> Case 6: The <span class="math inline">\(n\)</span>-Sided Collision Lattice and Geometric Projections</h2>
 <p>To study collisions on general <span class="math inline">\(n\)</span>-sided supports, we define the lattice of composition changes:</p>
-<p><strong>Definition 5.2 (Maximal Lattice Spacing / Span).</strong> <em>Let <span class="math inline">\(D\)</span> be a discrete random variable supported on a set of integers <span class="math inline">\(V = \{v_1, \dots, v_n\}\)</span>. The <strong>span</strong> <span class="math inline">\(d\)</span> of the distribution is defined as:</em> <span class="math display">\[
-d = \gcd(v_2 - v_1, v_3 - v_2, \dots, v_n - v_{n-1}).
-\]</span></p>
-<p><strong>Definition 5.3.</strong> <em>For a value set <span class="math inline">\(V = \{v_1, \dots, v_n\}\)</span>, the <strong>collision lattice</strong> <span class="math inline">\(L(V)\)</span> is:</em> <span class="math display">\[
+<p><strong>Definition 5.2.</strong> <em>For a value set <span class="math inline">\(V = \{v_1, \dots, v_n\}\)</span>, the <strong>collision lattice</strong> <span class="math inline">\(L(V)\)</span> is:</em> <span class="math display">\[
 L(V) = \left\{\, \vec{d} \in \mathbb{Z}^n \;:\; \sum_{i=1}^n d_i = 0, \ \ \sum_{i=1}^n d_i v_i = 0 \,\right\}.
 \]</span></p>
 <p><span class="math inline">\(L(V)\)</span> is the kernel of the linear map <span class="math inline">\(\mathbb{Z}^n \to \mathbb{Z}^2\)</span>, <span class="math inline">\(\vec{d} \mapsto \left( \sum d_i, \sum d_i v_i \right)\)</span>, and is therefore a sublattice of <span class="math inline">\(\mathbb{Z}^n\)</span>.</p>
@@ -826,8 +889,13 @@ L(V) = \left\{\, \vec{d} \in \mathbb{Z}^n \;:\; \sum_{i=1}^n d_i = 0, \ \ \sum_{
 \operatorname{rank} L(V) = n - \operatorname{rank}(\operatorname{im} \phi) = n - 2. \qquad \blacksquare
 \]</span></p>
 <p><strong>Corollary 5.6.</strong> <em>For every <span class="math inline">\(n \geq 3\)</span> and every choice of <span class="math inline">\(n\)</span> distinct values, there exists <span class="math inline">\(R_0(V)\)</span> such that for all <span class="math inline">\(R \geq R_0\)</span>, some sum-class <span class="math inline">\(s\)</span> receives contributions from at least two distinct compositions.</em></p>
-<section id="resolution-and-proof-of-conjecture-8.2-now-theorem-5.7" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="resolution-and-proof-of-conjecture-8.2-now-theorem-5.7"><span class="header-section-number">6.6.1</span> Resolution and Proof of Conjecture 8.2 (Now Theorem 5.7)</h3>
+<section id="geometric-projection-and-asymptotic-decay" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="geometric-projection-and-asymptotic-decay"><span class="header-section-number">7.6.1</span> Geometric Projection and Asymptotic Decay</h3>
+<p>The rank of the collision lattice, <span class="math inline">\(n-2\)</span>, is the dimension of the kernel of our projection map from the high-dimensional composition space to the 1D sum space. This rank explains why an <span class="math inline">\((n-2)\)</span>-dimensional kernel results in a 1D projection that decays as <span class="math inline">\(\Theta(R^{-1/2})\)</span> rather than <span class="math inline">\(\Theta(R^{-(n-1)/2})\)</span> (the original conjecture): - The composition space lies on an <span class="math inline">\((n-1)\)</span>-dimensional simplex of size <span class="math inline">\(R\)</span>, containing <span class="math inline">\(\binom{R+n-1}{n-1} \approx O(R^{n-1})\)</span> integer points. - The sum map <span class="math inline">\(\sigma: \mathbb{R}^n \to \mathbb{R}\)</span> acts as a 1D projection of this <span class="math inline">\((n-1)\)</span>-dimensional simplex. - Due to the Central Limit Theorem, the probability mass concentrates in an <span class="math inline">\((n-1)\)</span>-dimensional Gaussian ellipsoid of volume <span class="math inline">\(O(R^{(n-1)/2})\)</span>. - Projecting this ellipsoid onto the 1D sum axis yields an interval of length <span class="math inline">\(O(R^{1/2})\)</span> containing <span class="math inline">\(O(R^{1/2} / d)\)</span> lattice sum classes. - Since the total probability inside the ellipsoid is close to 1, the average probability per active sum class is of order <span class="math inline">\(\Theta(R^{-1/2})\)</span>, meaning the sum of squares (tie probability) must decay as <span class="math inline">\(\Theta(R^{-1/2})\)</span>.</p>
+<p>Thus, the <span class="math inline">\((n-2)\)</span>-dimensional fibers of the collision lattice absorb the “extra” dimensions of the composition space, ensuring that the projected probability density on the 1D sum axis always has a width of <span class="math inline">\(O(R^{1/2})\)</span>, resulting in the universal <span class="math inline">\(\Theta(R^{-1/2})\)</span> decay rate for any <span class="math inline">\(n \ge 2\)</span>.</p>
+</section>
+<section id="resolution-and-proof-of-conjecture-8.2-now-theorem-5.7" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="resolution-and-proof-of-conjecture-8.2-now-theorem-5.7"><span class="header-section-number">7.6.2</span> Resolution and Proof of Conjecture 8.2 (Now Theorem 5.7)</h3>
 <p>We can formally prove Conjecture 8.2 using the <strong>Local Limit Theorem for Lattice Distributions</strong>.</p>
 <p><strong>Theorem 5.7.</strong> <em>Let <span class="math inline">\(V\)</span> consist of <span class="math inline">\(n\)</span> values with maximal span <span class="math inline">\(d\)</span> (Definition 5.2) and let <span class="math inline">\(p_i \equiv 1/n\)</span>. Let <span class="math inline">\(\sigma^2\)</span> be the single-roll variance. As <span class="math inline">\(R \to \infty\)</span>, the tie probability decays polynomially as:</em> <span class="math display">\[
 P_{\text{tie}}(R) \sim \frac{d}{\sqrt{4\pi R \sigma^2}}.
@@ -842,8 +910,8 @@ P_{\text{tie}}(R) \sim \frac{d}{2\pi \sqrt{R\sigma^2}} \sum_{s} \exp\left( -\fra
 P_{\text{tie}}(R) \sim \frac{d \sqrt{\pi}}{2\pi \sqrt{R\sigma^2}} = \frac{d}{\sqrt{4\pi R \sigma^2}}. \qquad \blacksquare
 \]</span></p>
 </section>
-<section id="geometric-ellipsoid-projection-interpretation" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="geometric-ellipsoid-projection-interpretation"><span class="header-section-number">6.6.2</span> Geometric “Ellipsoid Projection” Interpretation</h3>
+<section id="geometric-ellipsoid-projection-interpretation" class="level3" data-number="7.6.3">
+<h3 data-number="7.6.3" class="anchored" data-anchor-id="geometric-ellipsoid-projection-interpretation"><span class="header-section-number">7.6.3</span> Geometric “Ellipsoid Projection” Interpretation</h3>
 <p>To provide an intuitive geometric picture of why <span class="math inline">\(P_{\text{tie}}(R) = \Theta(R^{-1/2})\)</span> for all <span class="math inline">\(n\)</span> (the result of Theorem 5.7), we analyze the geometry of the composition space and its projection:</p>
 <ol type="1">
 <li><strong>The Composition Simplex</strong>: For <span class="math inline">\(n\)</span> sides and <span class="math inline">\(R\)</span> rolls, the set of all possible composition vectors <span class="math inline">\(\vec{n} = (n_1, \dots, n_n)\)</span> lies on an <span class="math inline">\((n-1)\)</span>-dimensional simplex in <span class="math inline">\(\mathbb{R}^n\)</span> defined by <span class="math inline">\(\sum n_i = R\)</span>. The number of integer points on this simplex is <span class="math inline">\(\binom{R+n-1}{n-1} = \Theta(R^{n-1})\)</span>.</li>
@@ -857,8 +925,8 @@ P_{\text{tie}}(R) = \sum_s c_R(s)^2 = \Theta(R^{1/2}) \times \Theta\left(\frac{1
 <p>This geometric picture reveals why the number of sides <span class="math inline">\(n\)</span> does not increase the decay rate: as <span class="math inline">\(n\)</span> grows, the composition simplex and the concentration ellipsoid grow in dimensionality, but they are always projected down to a <strong>one-dimensional</strong> sum axis of width <span class="math inline">\(O(\sqrt{R})\)</span>. The dimension of the fiber (<span class="math inline">\(n-2\)</span>) exactly matches the extra degrees of freedom in the composition ellipsoid, meaning the collision probability is always governed purely by the 1D width of the projection.</p>
 </section>
 </section>
-<section id="case-7-numerical-implementation-and-validation" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="case-7-numerical-implementation-and-validation"><span class="header-section-number">6.7</span> Case 7: Numerical Implementation and Validation</h2>
+<section id="case-7-numerical-implementation-and-validation" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="case-7-numerical-implementation-and-validation"><span class="header-section-number">7.7</span> Case 7: Numerical Implementation and Validation</h2>
 <p>Rather than a closed form, <span class="math inline">\(P_{\text{tie}}(R)\)</span> for general <span class="math inline">\(n, V, \vec{p}\)</span> is computed directly via polynomial exponentiation. Listing 1 below provides a complete client-side JavaScript implementation that performs this direct evaluation.</p>
 <div style="font-family: 'SFMono-Regular', Consolas, monospace; font-size: 13px; background:#f6f6f6; border:1px solid #ddd; border-radius:6px; padding:16px; margin:1rem 0; overflow-x:auto;">
 <pre id="tie-prob-output" style="margin:0; white-space:pre-wrap;">Running...</pre>
@@ -1024,14 +1092,14 @@ P_{\text{tie}}(R) = \sum_s c_R(s)^2 = \Theta(R^{1/2}) \times \Theta\left(\frac{1
 </table>
 <p>The stabilization of the ratio around <span class="math inline">\(0.2519\)</span> provides strong empirical support for Theorem 5.7 and confirms that the decay rate is indeed <span class="math inline">\(\Theta(R^{-1/2})\)</span> rather than <span class="math inline">\(\Theta(R^{-1.5})\)</span>.</p>
 </section>
-<section id="summary" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.8</span> Summary</h2>
+<section id="summary" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.8</span> Summary</h2>
 <p>The generating function and Local Limit Theorem tools already applied to any <span class="math inline">\(n\)</span>. What we lose at general <span class="math inline">\(n\)</span> are clean closed-form formulas; both the collision structure and the decay-rate calculation require numerical rather than symbolic solutions, and combining this with the two-player mismatch results remains an open question.</p>
 <hr>
 </section>
 </section>
-<section id="references" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> References</h1>
+<section id="references" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> References</h1>
 <ol type="1">
 <li><p><strong>Feller, W.</strong> (1968). <em>An Introduction to Probability Theory and Its Applications</em> (Vol. 1, 3rd ed.). John Wiley &amp; Sons.<br>
 <em>(Provides the fundamental foundations of discrete probability, binomial distributions, and combinatorial identities).</em></p></li>

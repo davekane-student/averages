@@ -18,6 +18,31 @@ This paper presents a rigorous and comprehensive study of the asymptotic behavio
 
 ---
 
+# Mathematical Notation and Asymptotic Guide
+
+To maintain mathematical rigor and ensure clarity for advanced undergraduate students, we define here the standard asymptotic notation used throughout this manuscript:
+
+* **Asymptotic Equivalence ($\sim$)**: We write $f(R) \sim g(R)$ as $R \to \infty$ to denote that the ratio of the two functions approaches $1$:
+  $$
+  \lim_{R \to \infty} \frac{f(R)}{g(R)} = 1.
+  $$
+* **Big-O Notation ($O$)**: We write $f(R) = O(g(R))$ as $R \to \infty$ if there exist positive constants $M$ and $R_0$ such that:
+  $$
+  |f(R)| \le M |g(R)| \qquad \text{for all } R \ge R_0.
+  $$
+* **Little-o Notation ($o$)**: We write $f(R) = o(g(R))$ as $R \to \infty$ to denote that $f(R)$ grows much slower than $g(R)$:
+  $$
+  \lim_{R \to \infty} \frac{f(R)}{g(R)} = 0.
+  $$
+* **Big-Theta Notation ($\Theta$)**: We write $f(R) = \Theta(g(R))$ as $R \to \infty$ if $f(R)$ is bounded both above and below by $g(R)$ asymptotically; that is, if $f(R) = O(g(R))$ and $g(R) = O(f(R))$. This means there exist positive constants $M_1$, $M_2$, and $R_0$ such that:
+  $$
+  M_1 |g(R)| \le |f(R)| \le M_2 |g(R)| \qquad \text{for all } R \ge R_0.
+  $$
+
+Throughout this paper, $R$ represents the number of trials, $P_{\text{tie}}(R)$ denotes the exact tie probability, and $d$ represents the maximal lattice span of a discrete distribution.
+
+---
+
 # The Coin Game: A Progressive Pedagogical Walkthrough
 
 Two players each flip a coin $R$ times and compute the sample average of their results (assigning heads $= 1$ and tails $= 0$). What is the probability $P_{\text{tie}}(R)$ that their averages come out exactly equal? Here, $R_1$ represents the number of rolls for Player 1 and $R_2$ represents the number of rolls for Player 2. In this section, we assume both players roll the same number of times, so $R_1 = R_2 = R$.
@@ -194,11 +219,29 @@ Let $u = p_1 + p_2 - 1$. The complementary condition is $u = 0$. For $u \neq 0$,
 $$
 P_{\text{tie}}(R) = u^R P_R\left( \frac{1 - p_1 - p_2 + 2p_1p_2}{u} \right) = u^R P_R\left( \frac{2p_1p_2 - u}{u} \right).
 $$
-We recall that the Legendre Polynomial $P_R(x)$ of degree $R$ has the explicit hypergeometric expansion:
+We can prove that the singularity at $u = 0$ is removable and find its limit using two complementary methods: a direct algebraic expansion and an asymptotic limit analysis based on the leading-order behavior of Legendre Polynomials.
+
+#### Method 1: Asymptotic Limit via Leading Legendre Terms
+We recall that as the argument $x \to \pm\infty$, the Legendre Polynomial $P_R(x)$ of degree $R$ is dominated by its leading-order term:
+$$
+P_R(x) \sim \frac{1}{2^R} \binom{2R}{R} x^R.
+$$
+Under the complementarity condition, as the perturbation $u = p_1+p_2-1 \to 0$, the argument $x = \frac{2p_1p_2 - u}{u}$ grows without bound ($x \to \pm\infty$). Substituting this asymptotic behavior:
+$$
+P_R\left( \frac{2p_1p_2 - u}{u} \right) \sim \frac{1}{2^R} \binom{2R}{R} \left( \frac{2p_1p_2 - u}{u} \right)^R \sim \frac{1}{2^R} \binom{2R}{R} \frac{2^R (p_1 p_2)^R}{u^R} = \binom{2R}{R} \frac{(p_1 p_2)^R}{u^R}.
+$$
+Taking the limit as $u \to 0$ of the full expression:
+$$
+\lim_{u \to 0} u^R P_R\left( \frac{2p_1p_2 - u}{u} \right) = \lim_{u \to 0} u^R \left[ \binom{2R}{R} \frac{(p_1 p_2)^R}{u^R} \right] = \binom{2R}{R} (p_1 p_2)^R.
+$$
+Since $p_1 + p_2 = 1 \implies p_2 = 1 - p_1$, this limits to $[p_1(1-p_1)]^R \binom{2R}{R}$, recovering the Vandermonde-collapsed baseline exactly.
+
+#### Method 2: Exact Algebraic Cancellation
+To verify that this holds exactly for all $u \neq 0$ (and not just in the limit), we expand the Legendre Polynomial $P_R(x)$ explicitly:
 $$
 P_R(x) = \frac{1}{2^R} \sum_{j=0}^{R} \binom{R}{j}^2 (x-1)^{R-j} (x+1)^j.
 $$
-Substituting $x = \frac{2p_1p_2 - u}{u}$ into the expansion:
+Substituting $x = \frac{2p_1p_2 - u}{u}$ into the terms:
 $$
 x - 1 = \frac{2p_1p_2 - 2u}{u} = \frac{2(p_1p_2 - (p_1+p_2-1))}{u} = \frac{2(1-p_1)(1-p_2)}{u},
 $$
@@ -215,7 +258,7 @@ $$
 $$
 = u^{-R} \sum_{j=0}^{R} \binom{R}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{R-j}.
 $$
-Multiplying by $u^R$, the $u^{-R}$ cancels out completely:
+Multiplying by $u^R$, the $u^{-R}$ cancels out completely, showing that for all $u \neq 0$:
 $$
 u^R P_R\left( \frac{2p_1p_2 - u}{u} \right) = \sum_{j=0}^{R} \binom{R}{j}^2 (p_1p_2)^j \left[ (1-p_1)(1-p_2) \right]^{R-j} = P_{\text{tie}}(R).
 $$
@@ -826,6 +869,14 @@ $$
 P_{\text{tie}}(R) = \sum_{s} c_{1,R}(s) \, c_{2,R}(s).
 $$
 
+To study these sums and their limit distributions, we must be exceptionally precise about the lattice properties of the supports.
+
+**Definition 5.1 (Maximal Lattice Spacing / Span).** *Let $D$ be a discrete random variable supported on a set of integers $V = \{v_1, \dots, v_n\}$ with $v_1 < v_2 < \dots < v_n$. The **span** $d$ (also called the maximal lattice spacing) of the distribution is defined as the greatest common divisor of the differences between consecutive support values:*
+$$
+d = \gcd(v_2 - v_1, v_3 - v_2, \dots, v_n - v_{n-1}).
+$$
+*A distribution on $\mathbb{Z}$ is said to be **strongly $d$-lattice** if its support lies in a lattice of the form $a + d\mathbb{Z}$ and $d$ is the largest integer for which this holds. Importantly, the span of the sum of $R$ independent copies of $D$ is identical to the span of a single roll, $d$, which justifies why the lattice step size in the Riemann sum remains $d$ for all $R$.*
+
 ## Case 1: The Fair $n$-Sided Die ($p_i = q_i = 1/n$)
 We begin with the symmetric baseline: both players roll from the standard, uniformly spaced value set $V = \{0, 1, \dots, n-1\}$ with uniform probabilities $p_i = 1/n$.
 The probability weights simplify to:
@@ -833,7 +884,7 @@ $$
 c_R(s) = n^{-R} \sum_{\substack{\vec{n} \,:\, |\vec{n}|=R \\ \sum n_i i = s}} \binom{R}{n_1, \dots, n_n}.
 $$
 These sum weights correspond to the multinomial coefficients of $(1 + y + y^2 + \dots + y^{n-1})^R$.
-The maximal lattice span of $V$ is $d = 1$ (Definition 5.1). The mean is $\mu = (n-1)/2$, and the variance of a single roll is:
+The maximal lattice span of $V$ is $d = 1$ (by Definition 5.1). The mean is $\mu = (n-1)/2$, and the variance of a single roll is:
 $$
 \sigma^2 = \frac{n^2 - 1}{12}.
 $$
@@ -891,6 +942,46 @@ $$
 x_i^* = \frac{p_i e^{\lambda v_i}}{\sum_{j=1}^n p_j e^{\lambda v_j}}, \qquad y_i^* = \frac{q_i e^{-\lambda w_i}}{\sum_{j=1}^n q_j e^{-\lambda w_j}}
 $$
 where $\lambda \in \mathbb{R}$ is the unique Lagrange multiplier aligning their averages.
+
+### Variational Derivation of the Gibbs/Boltzmann Distribution
+To establish this general thermodynamic-probabilistic connection rigorously, we minimize the joint KL divergence subject to the constraints.
+We write the joint objective function as:
+$$
+H(\vec{x}, \vec{y}) = D_{\text{KL}}(\vec{x} \| \vec{p}) + D_{\text{KL}}(\vec{y} \| \vec{q}) = \sum_{i=1}^n x_i \log\left(\frac{x_i}{p_i}\right) + \sum_{i=1}^n y_i \log\left(\frac{y_i}{q_i}\right).
+$$
+We require $\vec{x}$ and $\vec{y}$ to be valid probability distributions on $V$ and $W$ respectively, meaning $\sum_{i=1}^n x_i = 1$ and $\sum_{i=1}^n y_i = 1$. Furthermore, they must satisfy the matching expectation constraint:
+$$
+\sum_{i=1}^n x_i v_i = \sum_{i=1}^n y_i w_i = \mu,
+$$
+where $\mu$ is the shared target average.
+Using Lagrange multipliers $\alpha_1$, $\alpha_2$, and $\lambda$, we formulate the Lagrangian function:
+$$
+\mathcal{L}(\vec{x}, \vec{y}, \alpha_1, \alpha_2, \lambda) = \sum_{i=1}^n x_i \log\left(\frac{x_i}{p_i}\right) + \sum_{i=1}^n y_i \log\left(\frac{y_i}{q_i}\right) - \alpha_1 \left( \sum_{i=1}^n x_i - 1 \right) - \alpha_2 \left( \sum_{i=1}^n y_i - 1 \right) - \lambda \left( \sum_{i=1}^n x_i v_i - \sum_{i=1}^n y_i w_i \right).
+$$
+To find the stationary points, we take the partial derivatives of $\mathcal{L}$ with respect to the empirical probabilities $x_i$ and $y_i$ and set them to zero:
+$$
+\frac{\partial \mathcal{L}}{\partial x_i} = \log\left(\frac{x_i}{p_i}\right) + 1 - \alpha_1 - \lambda v_i = 0 \implies x_i^* = p_i e^{\alpha_1 - 1} e^{\lambda v_i},
+$$
+$$
+\frac{\partial \mathcal{L}}{\partial y_i} = \log\left(\frac{y_i}{q_i}\right) + 1 - \alpha_2 + \lambda w_i = 0 \implies y_i^* = q_i e^{\alpha_2 - 1} e^{-\lambda w_i}.
+$$
+To determine the normalization factors, we sum the empirical probabilities:
+$$
+\sum_{i=1}^n x_i^* = e^{\alpha_1 - 1} \sum_{j=1}^n p_j e^{\lambda v_j} = 1 \implies e^{\alpha_1 - 1} = \frac{1}{\sum_{j=1}^n p_j e^{\lambda v_j}},
+$$
+$$
+\sum_{i=1}^n y_i^* = e^{\alpha_2 - 1} \sum_{j=1}^n q_j e^{-\lambda w_j} = 1 \implies e^{\alpha_2 - 1} = \frac{1}{\sum_{j=1}^n q_j e^{-\lambda w_j}}.
+$$
+Substituting these expressions back yields the classical **Gibbs/Boltzmann-like distributions**:
+$$
+x_i^* = \frac{p_i e^{\lambda v_i}}{\sum_{j=1}^n p_j e^{\lambda v_j}}, \qquad y_i^* = \frac{q_i e^{-\lambda w_i}}{\sum_{j=1}^n q_j e^{-\lambda w_j}}.
+$$
+The parameter $\lambda \in \mathbb{R}$ is the unique Lagrange multiplier that forces their expectations to align:
+$$
+\sum_{i=1}^n x_i^* v_i = \sum_{i=1}^n y_i^* w_i = \mu \implies \frac{\sum_{i=1}^n p_i v_i e^{\lambda v_i}}{\sum_{j=1}^n p_j e^{\lambda v_j}} = \frac{\sum_{i=1}^n q_i w_i e^{-\lambda w_i}}{\sum_{j=1}^n q_j e^{-\lambda w_j}} = \mu.
+$$
+Since the expected value of a Gibbs distribution is strictly monotonic with respect to $\lambda$, there is a unique $\lambda$ that solves this system for any target average $\mu$ lying within the intersection of the convex hulls of $V$ and $W$.
+
 By Theorem 3.1, the exponential decay rate is $P_{\text{tie}}(R) = \Theta(e^{-I^* R})$. The greater the distance in probability shapes ($P$) and physical ranges ($V$), the larger the joint minimum KL cost $D_{\text{KL}}(\vec{x}^* \| \vec{p}) + D_{\text{KL}}(\vec{y}^* \| \vec{q})$ becomes, accelerating the exponential decay.
 
 ---
@@ -898,12 +989,7 @@ By Theorem 3.1, the exponential decay rate is $P_{\text{tie}}(R) = \Theta(e^{-I^
 ## Case 6: The $n$-Sided Collision Lattice and Geometric Projections
 To study collisions on general $n$-sided supports, we define the lattice of composition changes:
 
-**Definition 5.2 (Maximal Lattice Spacing / Span).** *Let $D$ be a discrete random variable supported on a set of integers $V = \{v_1, \dots, v_n\}$. The **span** $d$ of the distribution is defined as:*
-$$
-d = \gcd(v_2 - v_1, v_3 - v_2, \dots, v_n - v_{n-1}).
-$$
-
-**Definition 5.3.** *For a value set $V = \{v_1, \dots, v_n\}$, the **collision lattice** $L(V)$ is:*
+**Definition 5.2.** *For a value set $V = \{v_1, \dots, v_n\}$, the **collision lattice** $L(V)$ is:*
 $$
 L(V) = \left\{\, \vec{d} \in \mathbb{Z}^n \;:\; \sum_{i=1}^n d_i = 0, \ \ \sum_{i=1}^n d_i v_i = 0 \,\right\}.
 $$
@@ -920,6 +1006,16 @@ $$
 $$
 
 **Corollary 5.6.** *For every $n \geq 3$ and every choice of $n$ distinct values, there exists $R_0(V)$ such that for all $R \geq R_0$, some sum-class $s$ receives contributions from at least two distinct compositions.*
+
+### Geometric Projection and Asymptotic Decay
+The rank of the collision lattice, $n-2$, is the dimension of the kernel of our projection map from the high-dimensional composition space to the 1D sum space. This rank explains why an $(n-2)$-dimensional kernel results in a 1D projection that decays as $\Theta(R^{-1/2})$ rather than $\Theta(R^{-(n-1)/2})$ (the original conjecture):
+- The composition space lies on an $(n-1)$-dimensional simplex of size $R$, containing $\binom{R+n-1}{n-1} \approx O(R^{n-1})$ integer points.
+- The sum map $\sigma: \mathbb{R}^n \to \mathbb{R}$ acts as a 1D projection of this $(n-1)$-dimensional simplex.
+- Due to the Central Limit Theorem, the probability mass concentrates in an $(n-1)$-dimensional Gaussian ellipsoid of volume $O(R^{(n-1)/2})$.
+- Projecting this ellipsoid onto the 1D sum axis yields an interval of length $O(R^{1/2})$ containing $O(R^{1/2} / d)$ lattice sum classes.
+- Since the total probability inside the ellipsoid is close to 1, the average probability per active sum class is of order $\Theta(R^{-1/2})$, meaning the sum of squares (tie probability) must decay as $\Theta(R^{-1/2})$.
+
+Thus, the $(n-2)$-dimensional fibers of the collision lattice absorb the "extra" dimensions of the composition space, ensuring that the projected probability density on the 1D sum axis always has a width of $O(R^{1/2})$, resulting in the universal $\Theta(R^{-1/2})$ decay rate for any $n \ge 2$.
 
 ### Resolution and Proof of Conjecture 8.2 (Now Theorem 5.7)
 We can formally prove Conjecture 8.2 using the **Local Limit Theorem for Lattice Distributions**.
